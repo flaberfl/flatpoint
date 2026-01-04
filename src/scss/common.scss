@@ -30,7 +30,10 @@
   }
 
   &__container {
+    position: relative;
     padding-top: toRem(520);
+
+    z-index: 100;
   }
 
   &__title {
@@ -43,6 +46,16 @@
 
     z-index: 100;
 
-    @include adaptiveValue("font-size", 52, 25ß);
+    @include adaptiveValue("font-size", 52, 25);
+  }
+
+  &__subtitle {
+    position: relative;
+
+    line-height: 136%;
+    color: #fff;
+    font-family: $secondFamily;
+
+    @include adaptiveValue("font-size", 22, 14);
   }
 }
