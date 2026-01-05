@@ -7,24 +7,22 @@
 	justify-content: center;
 	padding: 10px 30px;
 	border-radius: toRem(5);
-	background-color: $brightGreenColor;
+	// background-color: $brightGreenColor;
 	height: 47px;
 	
 	transition: all 0.3s;
 
 	@include adaptiveValue("font-size", 20, 16);
 
-	@media (max-width:$mobile) {
-		height: 41px;
-	}
+
 
 
 	&:active {}
 
-	@media (any-hover: hover) {
-		&:hover {
-			color: #fff;
-			background-color: #64d210;
-		}
-	}
+	// @media (any-hover: hover) {
+	// 	&:hover {
+	// 		color: #fff;
+	// 		background-color: #64d210;
+	// 	}
+	// }
 }
