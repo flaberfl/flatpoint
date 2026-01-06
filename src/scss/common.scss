@@ -108,6 +108,7 @@
   &__items {
     display: flex;
     justify-content: space-between;
+    gap: toRem(15);
   }
 
   &__item {
@@ -125,19 +126,30 @@
     &:nth-child(even) {
       transform: rotate(3.75deg);
     }
+
+    &:nth-child(3) {
+      margin-top: -20px;
+    }
+
+
+
   }
 
   &__frame {
     position: relative;
     height: auto;
     z-index: 10;
+
+    max-width: 100%;
   }
 
   &__photo {
     position: absolute;
     width: 100%;
-    inset: 0;
-
+    // height: 81%;
+    top: 10px;
+    // inset: 0;
+    
     object-fit: cover;
     z-index: 5;
   }
@@ -145,8 +157,19 @@
   &__bottom {
     position: relative;
     margin-top: toRem(70);
+
   }
 
+  &__line {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    top: -17px;
+    z-index: 50;
+  }
 
-  
+  &__value {
+    position: absolute;
+  }
+
 }
