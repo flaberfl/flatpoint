@@ -13,14 +13,14 @@
 		z-index: 800;
 		padding-top: toRem(8);
 
-		@media (max-width: toEm(1430)){
-			 padding-left: 15px;
-			 padding-right: 15px; 
-		};
+		@media (max-width: toEm(1430)) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 
-		@media (max-width:$mobile){
-			 padding-left: 7px;
-			 padding-right: 7px; 
+		@media (max-width:$mobile) {
+			padding-left: 7px;
+			padding-right: 7px;
 		}
 	}
 
@@ -38,12 +38,50 @@
 		backdrop-filter: blur(52px);
 		background: rgba(246, 244, 239, 0.19);
 
+		transition: all 0.3s;
 
-		._fixed & {}
+
+		._fixed & {
+			height: toRem(60);
+
+			backdrop-filter: none;
+			background: #F6F4EF;
+		}
+
+		@media (max-width:$tablet) {
+			backdrop-filter: none;
+			background: #fff;
+		}
 	}
 
+
 	&__logo {
-		img {}
+		.logo-desktop {
+			@media (max-width:$tablet) {
+				display: none;
+			}
+
+			._fixed & {
+				display: none;
+			}
+		}
+
+		.logo-mobile {
+			display: none;
+
+			@media (max-width:$tablet) {
+				display: block;
+			}
+
+			._fixed & {
+				display: block;
+			}
+		}
+
+		img {
+			@include adaptiveValue("width", 212, 100);
+		}
+
 	}
 
 	&__link {
@@ -69,6 +107,17 @@
 		font-family: $secondFamily;
 		font-weight: 600;
 		color: $thirdColor;
+		transition: all 0.3s;
+
+		._fixed & {
+			background-color: $secondColor;
+			color: #fff;
+		}
+
+		@media (max-width:$tablet) {
+			background-color: $secondColor;
+			color: #fff;
+		}
 	}
 
 }
@@ -122,7 +171,15 @@
 		&:first-child {
 			border-radius: 29px;
 			border: 1px solid #fff;
+		}
 
+		._fixed & {
+			color: $mainColor;
+
+			&:first-child {
+
+				border: 1px solid $mainColor;
+			}
 		}
 	}
 
