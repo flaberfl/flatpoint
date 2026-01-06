@@ -121,14 +121,11 @@
 
   &__button {
     position: relative;
-    width: toRem(170);
-    height: toRem(170);
-    flex: 0 0 170px;
+
     display: flex;
     justify-content: center;
     align-items: center;
     gap: toRem(5);
-    flex-direction: column;
     padding: toRem(6);
 
     background: $thirdColor;
@@ -143,10 +140,18 @@
     text-align: center;
     color: #fff;
 
-    @media (max-width: toEm(1200)) {
+    @media (min-width: toEm(1200)) {
+      width: toRem(170);
+      height: toRem(170);
+      flex: 0 0 170px;
+    }
+
+    @media (min-width:$mobile) {
+      flex-direction: column;
       width: toRem(150);
       height: toRem(150);
       flex: 0 0 150px;
+
     }
 
     @media (max-width:$mobile) {
