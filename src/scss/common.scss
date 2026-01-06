@@ -295,6 +295,10 @@
     top: 290px;
     top: 85%;
 
+    @media (min-width:toEm(700)) {
+      @include adaptiveValue("font-size", 20, 9);
+    }
+
     @media (max-width: toEm(700)) {
       font-size: toRem(15);
     }
