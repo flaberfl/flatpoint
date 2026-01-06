@@ -1,24 +1,35 @@
 .intro {
   position: relative;
-  height: 888px;
+  // height: 888px;
+
+  margin-bottom: toRem(260);
 
 
-  &::before {
-    content: '';
-    position: absolute;
-    // background: linear-gradient(to right, transparent, black);
-    // background: linear-gradient(179.95deg, rgba(0, 0, 0, 0) -17.22%, rgba(0, 0, 0, 0.7) 99.96%);
-    background: linear-gradient(180.00deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100%);
-    width: 100%;
-    height: 100%;
-    opacity: 0.7;
+  @media (min-width:$mobile) {
+    @include adaptiveValue("height", 888, 300);
   }
 
-  // &__background {
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
+  // @media (max-width:$mobile){
+  //    height: auto; 
   // }
+
+
+
+
+  &__background {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      // background: linear-gradient(to right, transparent, black);
+      // background: linear-gradient(179.95deg, rgba(0, 0, 0, 0) -17.22%, rgba(0, 0, 0, 0.7) 99.96%);
+      background: linear-gradient(180.00deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100%);
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+    }
+  }
 
   &__img {
     position: absolute;
@@ -28,16 +39,21 @@
     // inset: 0;
     object-fit: cover;
     z-index: -1;
-    aspect-ratio: 2 / 1;
+
+    @media (max-width:$mobile) {
+      position: static;
+    }
   }
 
   &__container {
-    padding-top: toRem(520);
+
+    @include adaptiveValue("padding-top", 520, 60);
   }
 
   &__wrapper {
     position: relative;
     display: flex;
+    gap: toRem(15);
     justify-content: space-between;
 
     z-index: 100;
@@ -75,6 +91,7 @@
     position: relative;
     width: toRem(170);
     height: toRem(170);
+    flex: 0 0 170px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +110,12 @@
     letter-spacing: -0.01em;
     text-align: center;
     color: #fff;
+
+    @media (max-width: toEm(1200)) {
+      width: toRem(150);
+      height: toRem(150);
+      flex: 0 0 150px;
+    }
 
     .round-svg {
       position: absolute;
@@ -149,15 +172,16 @@
     // height: 81%;
     top: 10px;
     // inset: 0;
-    
+
     object-fit: cover;
     z-index: 5;
   }
 
   &__bottom {
     position: relative;
-    margin-top: toRem(70);
+    // margin-top: toRem(70);
 
+    @include adaptiveValue("margin-top", 70, 0);
   }
 
   &__line {
