@@ -12,6 +12,16 @@
 		transition: all 0.4s;
 		z-index: 800;
 		padding-top: toRem(8);
+
+		@media (max-width: toEm(1430)){
+			 padding-left: 15px;
+			 padding-right: 15px; 
+		};
+
+		@media (max-width:$mobile){
+			 padding-left: 7px;
+			 padding-right: 7px; 
+		}
 	}
 
 	&__container {
