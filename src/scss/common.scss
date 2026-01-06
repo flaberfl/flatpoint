@@ -1,0 +1,15 @@
+.title-h2 {
+
+  
+  font-family: var(--font-family);
+  font-weight: 700;
+  line-height: 118%;
+  letter-spacing: -0.03em;
+  color: $titleColor;
+
+  @include adaptiveValue("font-size", 60, 16);
+
+  @media (max-width:$mobile) {
+    font-weight: 500;
+  }
+}
