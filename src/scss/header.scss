@@ -53,6 +53,8 @@
 		padding: 15px 20px;
 		background-color: #fff;
 
+		font-size: toRem(16);
+		letter-spacing: .4px;
 		line-height: 131%;
 		font-family: $secondFamily;
 		font-weight: 600;
@@ -103,6 +105,7 @@
 	&__item {
 		padding: 8px 16px;
 
+		font-size: toRem(16);
 		font-family: $secondFamily;
 		color: #fff;
 
