@@ -4,9 +4,13 @@
 
   margin-bottom: toRem(260);
 
-
   @media (min-width:$mobile) {
     @include adaptiveValue("height", 888, 300);
+  }
+
+  @media (max-width:$mobile){
+     display: flex;
+     flex-direction: column-reverse; 
   }
 
   &::before {
@@ -24,9 +28,7 @@
   }
 
 
-
   &__background {
-
     @media (max-width:$mobile) {
       position: relative;
 
@@ -45,17 +47,14 @@
 
   &__img {
     position: absolute;
-    // display: block;
     width: 100%;
     height: 100%;
-    // max-width: 100%;
-    // inset: 0;
     object-fit: cover;
     z-index: -1;
 
     @media (max-width:$mobile) {
       position: static;
-      // z-index: 0;
+      max-width: 100%;
     }
   }
 
