@@ -8,9 +8,9 @@
     @include adaptiveValue("height", 888, 300);
   }
 
-  @media (max-width:$mobile){
-     display: flex;
-     flex-direction: column-reverse; 
+  @media (max-width:$mobile) {
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   &::before {
@@ -59,8 +59,11 @@
   }
 
   &__container {
-
     @include adaptiveValue("padding-top", 520, 60);
+
+    @media (max-width:$mobile) {
+      padding-top: toRem(130);
+    }
   }
 
   &__wrapper {
@@ -70,9 +73,15 @@
     justify-content: space-between;
 
     z-index: 100;
+
+    @media (max-width:$mobile) {
+      flex-direction: column;
+    }
   }
 
-  &__content {}
+  &__content {
+    @media (max-width:$mobile) {}
+  }
 
   &__title {
     position: relative;
@@ -86,6 +95,11 @@
 
     @include adaptiveValue("font-size", 52, 25);
     @include adaptiveValue("margin-bottom", 26, 17);
+
+    @media (max-width:$mobile) {
+      color: $titleColor;
+      text-align: center;
+    }
   }
 
   &__subtitle {
@@ -98,6 +112,11 @@
     font-family: $secondFamily;
 
     @include adaptiveValue("font-size", 22, 14);
+
+    @media (max-width:$mobile) {
+      text-align: center;
+      color: $mainColor;
+    }
   }
 
   &__button {
@@ -128,6 +147,19 @@
       width: toRem(150);
       height: toRem(150);
       flex: 0 0 150px;
+    }
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+
+    &--mob {
+      display: none;
+
+      @media (max-width:$mobile) {
+        
+      }
+
     }
 
     .round-svg {
