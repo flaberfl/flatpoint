@@ -77,6 +77,7 @@ body {
 	color: $mainColor;
 	font-weight: 500;
 	background: #F6F4EF;
+	// background: red;
 
 	// Скролл заблокирован
 	.lock & {
@@ -179,3 +180,4 @@ body {
 // Подключение стилей отдельных страниц
 // @import "arhive";
 @import "intro";
+@import "flatpoint";
