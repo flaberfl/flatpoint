@@ -1,34 +1,196 @@
 .flatpoint {
 
+  background: url('@img/backg.png') 0 0 no-repeat;
+  background-size: cover;
+
   /* .flatpoint__container */
   &__container {}
 
+  &__logo {
+    max-width: 100%;
+
+    @include adaptiveValue("margin-bottom", 55, 16);
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 63, 40);
+  }
+
   /* .flatpoint__items */
-  &__items {}
+  &__items {
+    display: grid;
+
+
+    @include adaptiveValue("gap", 10, 5);
+  }
 
   /* .flatpoint__item */
-  &__item {}
+  &__item {
+    display: flex;
+
+    &:nth-child(odd) {
+      .flatpoint__item-text {
+        background-color: $secondColor;
+      }
+
+      .flatpoint__item-number {
+        background-color: #fff;
+        color: $secondColor;
+      }
+
+      .flatpoint__item-name {
+        color: #fff;
+      }
+
+      .flatpoint__text-box {
+        p {
+          color: $textWhiteColor;
+        }
+
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .flatpoint__item-text {
+        background-color: $otherColor;
+      }
+
+      .flatpoint__item-number {
+        color: #fff;
+        background-color: $secondColor;
+      }
+
+      .flatpoint__item-name {
+        color: $titleColor;
+      }
+    }
+
+    .flatpoint__text-box {
+      max-width: toRem(740);
+
+      p {
+        color: $mainColor;
+      }
+
+      span {
+        color: $titleColor;
+      }
+    }
+
+
+  }
 
   /* .flatpoint__item-text */
-  &__item-text {}
+  &__item-text {
+    padding: toRem(53) toRem(20) toRem(59) toRem(58);
+
+    background-color: $secondColor;
+    border-radius: toRem(20);
+  }
 
   /* .flatpoint__item-title */
-  &__item-title {}
+  &__item-title {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 16, 8);
+
+    @include adaptiveValue("margin-bottom", 23, 18);
+  }
 
   /* .flatpoint__item-number */
-  &__item-number {}
+  &__item-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 118%;
+    color: $secondColor;
+    background-color: $secondColor;
+
+    border-radius: 50%;
+    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue("width", 47, 30);
+    @include adaptiveValue("height", 47, 30);
+  }
 
   /* .flatpoint__item-name */
-  &__item-name {}
+  &__item-name {
+    display: flex;
+    align-items: center;
+    gap: toRem(6);
+
+
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    color: #fff;
+
+    @include adaptiveValue("font-size", 30, 16);
+
+    span {
+      svg {
+        @include adaptiveValue("width", 29, 20);
+      }
+    }
+
+  }
 
   /* .flatpoint__text-box */
-  &__text-box {}
+  &__text-box {
+    p {
+
+      font-family: var(--second-family);
+
+      line-height: 136%;
+
+      @include adaptiveValue("font-size", 18, 14);
+      @include adaptiveValue("margin-bottom", 13, 8);
+    }
+
+    span {
+      font-family: var(--second-family);
+      font-weight: 600;
+      line-height: 136%;
+      color: #fff;
+
+      @include adaptiveValue("font-size", 18, 14);
+
+    }
+  }
 
   /* .flatpoint__img */
-  &__img {}
+  &__img {
+    border-radius: toRem(20);
+    max-width: 100%;
+  }
 
   /* .flatpoint__button */
-  &__button {}
+  &__button {
+    max-width: toRem(283);
+    display: flex;
+    align-items: center;
+    padding: 10px 10px 10px 18px;
+    gap: toRem(10);
+    height: 66px;
+    border-radius: 100px;
+
+
+    font-family: var(--font-family-nr);
+    font-weight: 400;
+    line-height: 131%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    justify-self: center;
+    background: var(--third-color);
+
+    @include adaptiveValue("font-size", 18, 12);
+  }
 }
 
 .title-h2 {}
