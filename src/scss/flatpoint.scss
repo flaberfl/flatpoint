@@ -30,13 +30,36 @@
   &__items {
     display: grid;
 
-
     @include adaptiveValue("gap", 10, 5);
+    @include adaptiveValue("margin-bottom", 90, 30);
   }
 
   /* .flatpoint__item */
   &__item {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width:$tablet) {
+      flex-direction: column;
+      padding-bottom: toRem(25);
+
+      border-radius: toRem(20);
+
+      &:nth-child(odd) {
+        background-color: $secondColor;
+      }
+
+      &:nth-child(even) {
+        background-color: $otherColor;
+      }
+    }
+
+    @media (max-width:$mobileSmall) {
+      padding-left: toRem(16);
+      padding-right: toRem(16);
+    }
+
 
     &:nth-child(odd) {
       .flatpoint__item-text {
@@ -95,10 +118,19 @@
 
   /* .flatpoint__item-text */
   &__item-text {
-    padding: toRem(53) toRem(20) toRem(59) toRem(58);
-
+    width: 100%;
     background-color: $secondColor;
     border-radius: toRem(20);
+
+    @include adaptiveValue("padding-top", 53, 25);
+    @include adaptiveValue("padding-right", 20, 16);
+    @include adaptiveValue("padding-bottom", 59, 25);
+    @include adaptiveValue("padding-left", 58, 16);
+
+    @media (max-width:$mobileSmall) {
+      padding-left: toRem(0) !important;
+      padding-right: toRem(0) !important;
+    }
   }
 
   /* .flatpoint__item-title */
@@ -115,6 +147,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 
     font-size: 16px;
     line-height: 118%;
@@ -132,8 +165,6 @@
     display: flex;
     align-items: center;
     gap: toRem(6);
-
-
 
     font-family: var(--font-family);
     font-weight: 700;
@@ -158,7 +189,7 @@
       font-family: var(--second-family);
 
       line-height: 136%;
-
+      letter-spacing: .6px;
       @include adaptiveValue("font-size", 18, 14);
       @include adaptiveValue("margin-bottom", 13, 8);
     }
@@ -177,7 +208,12 @@
   /* .flatpoint__img */
   &__img {
     border-radius: toRem(20);
-    max-width: 100%;
+    width: 100%;
+    max-width: 432px;
+
+    @media (max-width:$tablet) {
+      margin: 0 auto;
+    }
   }
 
   /* .flatpoint__button */
@@ -200,6 +236,11 @@
     background: var(--third-color);
 
     @include adaptiveValue("font-size", 18, 12);
+    @include adaptiveValue("height", 66, 47);
+
+    @media (max-width:$mobile){
+       display: none; 
+    }
   }
 }
 

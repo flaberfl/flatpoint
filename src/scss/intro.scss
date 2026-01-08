@@ -62,6 +62,7 @@
   }
 
   &__container {
+    position: relative;
     @include adaptiveValue("padding-top", 520, 60);
 
     @media (max-width:$mobile) {
@@ -162,14 +163,20 @@
 
     &--mob {
       display: none;
-
+      
       @media (max-width:$mobile) {
+        position: fixed;
         display: flex;
         justify-content: space-between;
         padding: 10px 10px 10px 18px;
         width: 100%;
         height: 47px;
+        max-width: toRem(300);
+        right: toRem(15);
+        bottom: toRem(20);
+
         border-radius: 100px;
+        z-index: 200;
 
         .intro__icon {
           width: 34px;
