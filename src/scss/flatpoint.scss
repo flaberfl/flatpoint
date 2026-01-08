@@ -2,8 +2,6 @@
   position: relative;
   background: url('@img/backg.png') center 0;
   // background-size: cover;
-  // padding-top: 536px;
-  // margin-top: -300px;
 
   border: 1px solid red;
 
@@ -24,18 +22,6 @@
     max-width: 100%;
 
     @include adaptiveValue("top", -266, -58);
-
-    // @media (max-width:$tablet) {
-    //   top: 7.8%;
-    // }
-
-    // @media (max-width:$mobile){
-    //   top: 17%;
-    // }
-
-    // @media (max-width: toEm(675)){
-    //    top: 15.5%; 
-    // }
   }
 
   /* .flatpoint__container */
@@ -58,7 +44,10 @@
     display: grid;
 
     @include adaptiveValue("gap", 10, 5);
-    @include adaptiveValue("margin-bottom", 90, 30);
+
+    @media (min-width:$mobile) {
+      @include adaptiveValue("margin-bottom", 90, 30);
+    }
   }
 
   /* .flatpoint__item */
@@ -86,7 +75,6 @@
       padding-left: toRem(16);
       padding-right: toRem(16);
     }
-
 
     &:nth-child(odd) {
       .flatpoint__item-text {
@@ -142,8 +130,6 @@
         color: $titleColor;
       }
     }
-
-
   }
 
   /* .flatpoint__item-text */
@@ -209,13 +195,11 @@
         @include adaptiveValue("width", 29, 20);
       }
     }
-
   }
 
   /* .flatpoint__text-box */
   &__text-box {
     p {
-
       font-family: var(--second-family);
 
       line-height: 136%;
@@ -231,7 +215,6 @@
       color: #fff;
 
       @include adaptiveValue("font-size", 18, 14);
-
     }
   }
 
@@ -256,7 +239,6 @@
     height: 66px;
     border-radius: 100px;
 
-
     font-family: var(--font-family-nr);
     font-weight: 400;
     line-height: 131%;
@@ -273,7 +255,3 @@
     }
   }
 }
-
-.title-h2 {}
-
-.button {}

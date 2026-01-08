@@ -159,6 +159,11 @@ body {
 		border-radius: toRem(10);
 	}
 
+	[class*="__container--full"] {
+		max-width: toRem(1440);
+		margin: 0 auto;
+	}
+
 	// [class*="__container--intro"] {
 	// 	max-width: toRem(1400);
 	// 	margin: 0 auto;
