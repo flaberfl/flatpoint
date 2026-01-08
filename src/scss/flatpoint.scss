@@ -5,12 +5,27 @@
   padding-top: 536px;
   margin-top: -300px;
 
+
+  border: 1px solid red;
+
+  @include adaptiveValue("margin-top", -300, -610);
+  @include adaptiveValue("padding-top", 536, 444);
+
+  @media (max-width:$mobile){
+      @include adaptiveValue("margin-top", -1500, -610);
+  }
+
   &__line {
     position: absolute;
     top: 9.8%;
     // right: 12.6%;
     left: 50%;
     transform: translate(-50%, 0px);
+    max-width: 100%;
+
+    @media (max-width:$tablet){
+      top: 7.8%;
+    }
   }
 
   /* .flatpoint__container */
@@ -102,7 +117,10 @@
     }
 
     .flatpoint__text-box {
-      max-width: toRem(740);
+
+      @media (min-width:$tablet) {
+        max-width: toRem(740);
+      }
 
       p {
         color: $mainColor;
@@ -238,8 +256,8 @@
     @include adaptiveValue("font-size", 18, 12);
     @include adaptiveValue("height", 66, 47);
 
-    @media (max-width:$mobile){
-       display: none; 
+    @media (max-width:$mobile) {
+      display: none;
     }
   }
 }
