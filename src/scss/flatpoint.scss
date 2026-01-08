@@ -2,34 +2,46 @@
   position: relative;
   background: url('@img/backg.png') center 0;
   // background-size: cover;
-  padding-top: 536px;
-  margin-top: -300px;
-
+  // padding-top: 536px;
+  // margin-top: -300px;
 
   border: 1px solid red;
 
   @include adaptiveValue("margin-top", -300, -610);
   @include adaptiveValue("padding-top", 536, 444);
 
-  @media (max-width:$mobile){
-      @include adaptiveValue("margin-top", -1500, -610);
+  @media (max-width:$mobile) {
+    @include adaptiveValue("margin-top", -1500, -610);
+    @include adaptiveValue("padding-top", 1536, 444);
   }
 
   &__line {
     position: absolute;
-    top: 9.8%;
+    top: 0px;
     // right: 12.6%;
     left: 50%;
     transform: translate(-50%, 0px);
     max-width: 100%;
 
-    @media (max-width:$tablet){
-      top: 7.8%;
-    }
+    @include adaptiveValue("top", -266, -58);
+
+    // @media (max-width:$tablet) {
+    //   top: 7.8%;
+    // }
+
+    // @media (max-width:$mobile){
+    //   top: 17%;
+    // }
+
+    // @media (max-width: toEm(675)){
+    //    top: 15.5%; 
+    // }
   }
 
   /* .flatpoint__container */
-  &__container {}
+  &__container {
+    position: relative;
+  }
 
   &__logo {
     max-width: 100%;

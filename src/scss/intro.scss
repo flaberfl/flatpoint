@@ -258,6 +258,7 @@
   &__bottom {
     position: relative;
     // margin-top: toRem(70);
+    z-index: 100;
 
     @include adaptiveValue("margin-top", 70, 0);
   }
