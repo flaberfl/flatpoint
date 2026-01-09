@@ -38,19 +38,54 @@
 
   // .activities__item
 
-  &__item {}
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &:nth-child(odd) {
+      .activities__photo {
+        transform: rotate(-4.39deg);
+      }
+    }
+  }
 
   // .activities__frame
 
-  &__frame {}
+  &__frame {
+    position: relative;
+    height: auto;
+    z-index: 10;
+    max-width: 100%;
+  }
 
   // .activities__photo
 
-  &__photo {}
+  &__photo {
+    position: absolute;
+    max-width: 100%;
+    // width: 100%;
+    top: 18%;
+    left: 75px;
+    // object-fit: cover;
+    z-index: 5;
+  }
 
   // .activities__value
 
-  &__value {}
+  &__value {
+    position: absolute;
+    font-family: var(--third-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 107%;
+    color: var(--title-color);
+    z-index: 100;
+    left: 16px;
+    top: 85%;
+  }
 
   // .activities__content
 
