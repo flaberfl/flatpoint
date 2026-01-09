@@ -1,0 +1,98 @@
+.activities {
+
+  position: relative;
+  background: url('@img/activities/background.png') center 0;
+  // background-size: cover;
+
+  border: 1px solid red;
+
+  // .activities__container
+
+  &__container {}
+
+  // .activities__title
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 44, 25);
+  }
+
+  // .activities__container--full
+
+  &__container--full {}
+
+  // .activities__items-scroll
+
+  &__items-scroll {}
+
+  // .activities__slider
+
+  &__slider {}
+
+  // .activities__wrapper
+
+  &__wrapper {}
+
+  // .activities__slide
+
+  &__slide {}
+
+  // .activities__item
+
+  &__item {}
+
+  // .activities__frame
+
+  &__frame {}
+
+  // .activities__photo
+
+  &__photo {}
+
+  // .activities__value
+
+  &__value {}
+
+  // .activities__content
+
+  &__content {}
+
+  // .activities__left-side
+
+  &__left-side {}
+
+  // .activities__subtitle
+
+  &__subtitle {}
+
+  // .activities__text
+
+  &__text {}
+
+  // .activities__right-side
+
+  &__right-side {}
+}
+
+.flatpoint {
+
+  // .flatpoint__button
+
+  &__button {}
+}
+
+.button {}
+
+.intro {
+
+  // .intro__icon
+
+  &__icon {}
+}
+
+.title-h2 {}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
