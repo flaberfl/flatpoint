@@ -13,7 +13,7 @@
 	transition: all 0.3s;
 
 	@include adaptiveValue("font-size", 20, 16);
-
+	@include adaptiveValue("height", 65, 50);
 
 
 

@@ -22,11 +22,17 @@
 
   // .activities__items-scroll
 
-  &__items-scroll {}
+  &__items-scroll {
+
+    margin-right: -15px;
+    margin-left: -15px;
+  }
 
   // .activities__slider
 
-  &__slider {}
+  &__slider {
+    overflow: visible !important;
+  }
 
   // .activities__wrapper
 
@@ -34,48 +40,63 @@
 
   // .activities__slide
 
-  &__slide {}
+  &__slide {
+    height: 100%;
+    position: relative;
+
+    &:nth-child(odd) {
+      .activities__value {
+        transform: rotate(-4.39deg);
+      }
+    }
+
+    &:nth-child(even) {
+      .activities__value {
+        transform: rotate(3.75deg);
+      }
+    }
+  }
 
   // .activities__item
 
   &__item {
     position: relative;
+    height: 100%;
+    border: 1px solid red;
     display: flex;
+    // justify-content: flex-start;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-end;
+    // overflow: hidden;
 
-    &:nth-child(odd) {
-      .activities__photo {
-        transform: rotate(-4.39deg);
-      }
-    }
+
   }
 
   // .activities__frame
 
   &__frame {
     position: relative;
-    height: auto;
-    z-index: 10;
+    // height: auto;
+    z-index: 5;
     max-width: 100%;
   }
 
   // .activities__photo
 
-  &__photo {
-    position: absolute;
-    max-width: 100%;
-    // width: 100%;
-    top: 18%;
-    left: 75px;
-    // object-fit: cover;
-    z-index: 5;
-  }
+  // &__photo {
+  //   position: absolute;
+  //   max-width: 100%;
+  //   // width: 100%;
+  //   top: 18%;
+  //   left: 75px;
+  //   // object-fit: cover;
+  //   z-index: 5;
+  // }
 
   // .activities__value
 
   &__value {
+    align-self: anchor-center;
     position: absolute;
     font-family: var(--third-family);
     font-weight: 700;
@@ -83,8 +104,16 @@
     line-height: 107%;
     color: var(--title-color);
     z-index: 100;
-    left: 16px;
-    top: 85%;
+    right: 39%;
+    // left: 2%;
+    top: 81%;
+    z-index: 10;
+
+    @include adaptiveValue("font-size", 20, 11);
+
+    @media (max-width: toEm(610)) {
+      top: 84%;
+    }
   }
 
   // .activities__content

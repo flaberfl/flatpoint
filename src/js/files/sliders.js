@@ -32,46 +32,50 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 4,
+			spaceBetween: 0,
+
 
 
 			// slidesPerView: 1, // Показываем 3 слайда
 			// slidesPerGroup: 1,
 
 			// loopAdditionalSlides: 3,
-			// autoHeight: true,
+			autoHeight: true,
 			speed: 800,
 
 			// // Брейкпоинты
 			breakpoints: {
-				320: {
-					slidesPerView: 1.2,
-					spaceBetween: 20,
-	
+				0: {
+					slidesPerView: 1,
+
 				},
-				500: {
-					slidesPerView: 4,
-					spaceBetween: 20,
-	
+				320: {
+					slidesPerView: 1.5,
+
+				},
+				480: {
+					slidesPerView: 2,
+
+				},
+				600: {
+					slidesPerView: 2.5,
+
 				},
 
 				768: {
 
-					slidesPerView: 4,
-					spaceBetween: 20,
+					slidesPerView: 3,
 				},
 				992: {
-					slidesPerView: 4,
-					spaceBetween: 20,
+					slidesPerView: 3.5,
 				},
 
-				// 1245: {
-				// 	slidesPerView: 3,
-				// 	spaceBetween: 10,
-				// },
+				1366: {
+					slidesPerView: 4,
+				},
 
 				1920: {
-					slidesPerView: 5,
-					spaceBetween: 30,
+					slidesPerView: 4,
 				},
 			},
 
