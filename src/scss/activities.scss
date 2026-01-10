@@ -243,6 +243,15 @@
   &__right-side {
     position: relative;
     // padding-bottom: 85%;
+    // padding-bottom: 430px;
+
+    @media (max-width:$tablet) {
+      @include adaptiveValue("padding-bottom", 670, 0);
+    }
+
+    @media (max-width:$mobileSmall){
+       @include adaptiveValue("padding-bottom", 500, 0);
+    }
 
     img {
       position: absolute;
