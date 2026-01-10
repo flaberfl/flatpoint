@@ -1,0 +1,51 @@
+.specials {
+
+  /* .specials__container */
+  &__container {}
+
+  /* .specials__content */
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 59.435%;
+  }
+
+  /* .specials__left */
+  &__left {}
+
+  /* .specials__title */
+  &__title {}
+
+  /* .specials__text */
+  &__text {}
+
+  /* .specials__button */
+  &__button {}
+
+  /* .specials__right */
+  &__right {}
+
+  /* .specials__item */
+  &__item {}
+
+  /* .specials__num */
+  &__num {}
+
+  /* .specials__name */
+  &__name {}
+
+  /* .specials__icon */
+  &__icon {}
+
+  /* .specials__promo */
+  &__promo {}
+}
+
+.title-h2 {}
+
+.button {}
+
+.title-promo {}
+
+.item-promo-box {}
+
+.item-promo {}

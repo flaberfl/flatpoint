@@ -3,6 +3,7 @@
   position: relative;
   background: url('@img/activities/background.png') center 0;
   // background-size: cover;
+  padding-bottom: toRem(250);
 
 
   @include adaptiveValue("padding-top", 90, 80);
@@ -24,6 +25,10 @@
 
   &__title {
     // @include adaptiveValue("margin-bottom", 44, 25);
+
+    @media (max-width:$mobile){
+       margin-bottom: toRem(30); 
+    }
   }
 
   // .activities__container--full
