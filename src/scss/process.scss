@@ -1,9 +1,12 @@
 .process {
 
   @include adaptiveValue("padding-top", 150, 80);
+  @include adaptiveValue("margin-bottom", 70, 30);
 
   /* .process__container */
-  &__container {}
+  &__container {
+    position: relative;
+  }
 
   /* .process__title */
   &__title {
@@ -12,6 +15,7 @@
 
   /* .process__steps */
   &__steps {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
@@ -19,7 +23,7 @@
     overflow-x: auto;
     scrollbar-width: none;
 
-    @include adaptiveValue("gap", 26, 10);
+    @include adaptiveValue("gap", 20, 10);
   }
 
   /* .process__step */
@@ -63,8 +67,8 @@
     }
 
     &:nth-child(even) {
-      
-      @media (min-width:$mobile){
+
+      @media (min-width:$mobile) {
         margin-top: toRem(50);
       }
 
@@ -85,11 +89,13 @@
 
   /* .process__num */
   &__num {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
     border-radius: 50%;
+    z-index: 50;
 
     line-height: 118%;
 
@@ -97,6 +103,10 @@
 
     @include adaptiveValue("width", 50, 30);
     @include adaptiveValue("height", 50, 30);
+  }
+
+  &__line {
+    position: absolute;
   }
 
   /* .process__text-box */
@@ -126,5 +136,87 @@
     color: $mainColor;
 
     @include adaptiveValue("font-size", 18, 14);
+  }
+}
+
+
+.banner-callback {
+
+  /* .banner-callback__container */
+  &__container {
+  }
+
+  &__content {
+    padding: toRem(30) toRem(18) toRem(23);
+
+    border-radius: toRem(10);
+    background-color: #fff;
+
+    @media (max-width:$mobileSmall){
+       margin-right: -15px;
+       margin-left: -15px; 
+    }
+  }
+
+  /* .banner-callback__top */
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: toRem(15);
+
+    @include adaptiveValue("margin-bottom", 32, 23);
+
+    @media (max-width:$mobile){
+       grid-template-columns: auto; 
+    }
+  }
+
+  /* .banner-callback__title-box */
+  &__title-box {
+    display: flex;
+    align-items: center;
+
+    @include adaptiveValue("gap", 23, 15);
+
+    @media (max-width: toEm(360)){
+       flex-direction: column; 
+       align-items: flex-start;
+    }
+  }
+
+  /* .banner-callback__photo */
+  &__photo {
+    border-radius: toRem(9);
+    max-width: 100%;
+  }
+
+  /* .banner-callback__title */
+  &__title {
+
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    color: $titleColor;
+
+    @include adaptiveValue("font-size", 30, 20);
+  }
+
+  /* .banner-callback__text */
+  &__text {
+    font-family: var(--second-family);
+    font-size: 16px;
+    line-height: 136%;
+    color: $titleColor;
+
+    @media (max-width:$mobile) {
+      font-size: 14px;
+    }
+  }
+
+  /* .banner-callback__button */
+  &__button {
+    width: 100%;
   }
 }
