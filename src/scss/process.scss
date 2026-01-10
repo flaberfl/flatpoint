@@ -1,0 +1,130 @@
+.process {
+
+  @include adaptiveValue("padding-top", 150, 80);
+
+  /* .process__container */
+  &__container {}
+
+  /* .process__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 70, 35);
+  }
+
+  /* .process__steps */
+  &__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    @include adaptiveValue("gap", 26, 10);
+  }
+
+  /* .process__step */
+  &__step {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: toRem(20);
+    overflow: hidden;
+    padding-right: toRem(13);
+
+    @include adaptiveValue("height", 360, 243);
+    @include adaptiveValue("width", 318, 260);
+
+    @include adaptiveValue("padding-top", 27, 18);
+    @include adaptiveValue("padding-left", 20, 16);
+    @include adaptiveValue("padding-bottom", 22, 13);
+
+
+    &:nth-child(1) {
+      background: $otherColor url('@img/process/01.png') 0 0 no-repeat;
+    }
+
+    &:nth-child(2) {
+      background: $secondColor url('@img/process/02.png') 0 0 no-repeat;
+    }
+
+    &:nth-child(3) {
+      background: $otherColor url('@img/process/03.png') 0 0 no-repeat;
+    }
+
+    &:nth-child(4) {
+      background: $secondColor url('@img/process/04.png') 0 0 no-repeat;
+    }
+
+    &:nth-child(odd) {
+      .process__num {
+        color: #fff;
+        background-color: $secondColor;
+      }
+    }
+
+    &:nth-child(even) {
+      
+      @media (min-width:$mobile){
+        margin-top: toRem(50);
+      }
+
+      .process__num {
+        color: $secondColor;
+        background-color: $otherColor;
+      }
+
+      .process__name {
+        color: #fff;
+      }
+
+      .process__text {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+
+  /* .process__num */
+  &__num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    line-height: 118%;
+
+    @include adaptiveValue("font-size", 16, 12);
+
+    @include adaptiveValue("width", 50, 30);
+    @include adaptiveValue("height", 50, 30);
+  }
+
+  /* .process__text-box */
+  &__text-box {}
+
+  /* .process__name */
+  &__name {
+
+    margin-bottom: toRem(20);
+
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    color: $titleColor;
+
+    @include adaptiveValue("font-size", 30, 20);
+
+    @media (max-width:$mobile) {
+      margin-bottom: toRem(18);
+    }
+  }
+
+  /* .process__text */
+  &__text {
+    font-family: var(--second-family);
+    line-height: 136%;
+    color: $mainColor;
+
+    @include adaptiveValue("font-size", 18, 14);
+  }
+}
