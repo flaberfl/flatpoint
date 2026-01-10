@@ -3,7 +3,7 @@
   position: relative;
   background: url('@img/activities/background.png') center 0;
   // background-size: cover;
-  padding-bottom: toRem(250);
+  padding-bottom: toRem(239);
 
 
   @include adaptiveValue("padding-top", 90, 80);
@@ -26,8 +26,8 @@
   &__title {
     // @include adaptiveValue("margin-bottom", 44, 25);
 
-    @media (max-width:$mobile){
-       margin-bottom: toRem(30); 
+    @media (max-width:$mobile) {
+      margin-bottom: toRem(30);
     }
   }
 
@@ -204,8 +204,8 @@
   &__left-side {
     // flex-shrink: 0;
     @include adaptiveValue("padding-top", 120, 50);
-    
-    @media (min-width:$tablet){
+
+    @media (min-width:$tablet) {
       max-width: 651px;
     }
   }
@@ -228,6 +228,7 @@
 
     font-family: $secondFamily;
     line-height: 136%;
+    letter-spacing: 0.6px;
     color: $mainColor;
 
     @include adaptiveValue("font-size", 18, 14);
