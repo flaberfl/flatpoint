@@ -39,8 +39,12 @@
     margin-left: -15px;
 
     // margin-bottom: toRem(96);
-  
-  @include adaptiveValue("margin-bottom", 96, 10);
+
+    @include adaptiveValue("margin-bottom", 96, 10);
+
+    @media (max-width:toEm(1200)) {
+      margin-bottom: toRem(0);
+    }
   }
 
   // .activities__slider
@@ -186,7 +190,7 @@
 
     // border: 1px solid red;
 
-    @media (max-width:$tablet){
+    @media (max-width:$tablet) {
       grid-template-columns: 1fr;
     }
   }
@@ -194,9 +198,9 @@
   // .activities__left-side
 
   &__left-side {
-    padding-top: toRem(123);
     max-width: 651px;
     // flex-shrink: 0;
+    @include adaptiveValue("padding-top", 120, 50);
   }
 
   // .activities__subtitle
@@ -239,7 +243,7 @@
       // object-fit: cover;
       left: -202px;
 
-      @media (max-width:$tablet){
+      @media (max-width:$tablet) {
         max-width: 100%;
         left: 0;
       }
