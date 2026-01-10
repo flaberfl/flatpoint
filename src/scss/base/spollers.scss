@@ -3,8 +3,8 @@
 
 // Блок со спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
+	// display: grid;
+	// gap: 15px;
 
 	// &__icon {
 	// 	display: flex;
@@ -72,8 +72,12 @@
 
 // Спойлер
 .spollers__item {
-	overflow: hidden;
-	border-radius: toRem(10)
+	// overflow: hidden;
+	// border-radius: toRem(10)
+
+	&:last-child {
+		border-bottom: 1px solid rgba(46, 44, 40, 0.4);
+	}
 }
 
 // Заголовок спойлера
@@ -82,26 +86,40 @@
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+
 	cursor: default;
 	text-align: left;
 	position: relative;
 	list-style: none;
-	padding: 10px 15px;
-	color: #000;
-	background-color: $grayColor;
-
+	border-top: 1px solid rgba(46, 44, 40, 0.4);
 	transition: all 0.3s;
 
-	height: 40px;
+	font-weight: 700;
+	line-height: 118%;
+	letter-spacing: -0.03em;
+	color: $titleColor;
+	transition: all 0.3s;
 
-
-	// @media (max-width:$mobile) {
-	// 	font-size: toRem(18);
-	// }
+	@include adaptiveValue("font-size", 22, 16);
+	@include adaptiveValue("height", 80, 55);
 
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: rgba(31, 30, 27, 0.6);
+
+			._spoller-init & {
+
+				&::before,
+				&::after {
+					background-color: rgba(31, 30, 27, 0.6);
+				}
+			}
+		}
 	}
 
 	._spoller-init & {
@@ -111,12 +129,13 @@
 		&::after {
 			content: "";
 			position: absolute;
-			right: toRem(26);
+			right: toRem(16);
 			top: 50%;
-			background-color: $mainColor;
-			height: 2px;
-			width: 12px;
+			background-color: $titleColor;
+			height: 4px;
+			width: 14px;
 			transition: transform 0.5s ease 0s;
+			transition: all 0.3s;
 
 			@media (max-width:$mobile) {
 				right: toRem(10);
@@ -124,15 +143,15 @@
 		}
 
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
+			transform: translate(-52%, -75%) rotate(45deg);
 		}
 
 		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
+			transform: translate(0, -75%) rotate(-45deg);
 		}
 
 		&._spoller-active {
-			border-radius: 10px 10px 0 0;
+			// border-radius: 10px 10px 0 0;
 
 
 			// color: $mainColor;
@@ -144,11 +163,11 @@
 			}
 
 			&::before {
-				transform: translateX(-75%) rotate(-40deg);
+				transform: translateX(-52%) rotate(-45deg);
 			}
 
 			&::after {
-				transform: rotate(40deg);
+				transform: rotate(45deg);
 			}
 		}
 
@@ -191,12 +210,12 @@
 
 // Контент спойлера
 .spollers__body {
-	background: $grayColor;
-	padding: 10px 15px;
+	// background: $mainColor;
+	// padding: 10px 0;
+	padding-bottom: toRem(20);
+	padding-right: toRem(20);
 
-	// font-weight: 400;
-	// font-size: 16px;
-	line-height: normal;
-	color: rgba(0, 0, 0, 0.75);
+	font-family: var(--second-family);
 
+	@include adaptiveValue("font-size", 18, 12);
 }

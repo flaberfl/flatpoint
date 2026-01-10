@@ -1,0 +1,55 @@
+.pricing {
+
+  /* .pricing__container */
+  &__container {}
+
+  /* .pricing__title */
+  &__title {
+
+    @include adaptiveValue("margin-bottom", 65, 37);
+  }
+
+  /* .pricing__content */
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 59.435%;
+
+    @include adaptiveValue("gap", 114, 40);
+  }
+
+  /* .pricing__media */
+  &__media {
+    img {
+      max-width: 100%;
+
+      border-radius: 20px;
+
+      @include adaptiveValue("margin-bottom", 36, 20);
+    }
+  }
+
+  /* .pricing__text */
+  &__text {
+    font-family: var(--second-family);
+    line-height: 136%;
+
+    @include adaptiveValue("font-size", 16, 12);
+  }
+
+  /* .pricing__accordeon */
+  &__accordeon {}
+}
+
+.title-h2 {}
+
+.spollers {
+
+  /* .spollers__item */
+  &__item {}
+
+  /* .spollers__title */
+  &__title {}
+
+  /* .spollers__body */
+  &__body {}
+}
