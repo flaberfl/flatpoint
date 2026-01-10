@@ -1,4 +1,6 @@
 .specials {
+  position: relative;
+  z-index: 100;
 
   /* .specials__container */
   &__container {}
@@ -7,6 +9,15 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 59.435%;
+
+    @media (max-width: toEm(1100)) {
+      grid-template-columns: auto;
+    }
+
+    @media (max-width:$mobileSmall) {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
   }
 
   /* .specials__left */
@@ -17,6 +28,11 @@
     background-color: $otherColor;
 
     @include adaptiveValue("border-radius", 30, 18);
+
+    @include adaptiveValue("padding-top", 77, 40);
+    @include adaptiveValue("padding-right", 36, 17);
+    @include adaptiveValue("padding-bottom", 70, 20);
+    @include adaptiveValue("padding-left", 36, 17);
   }
 
   /* .specials__title */
@@ -24,6 +40,10 @@
 
     @include adaptiveValue("font-size", 50, 25);
     @include adaptiveValue("margin-bottom", 38, 20);
+
+    @media (max-width: toEm(1100)) {
+      text-align: center;
+    }
   }
 
   /* .specials__text */
@@ -35,21 +55,29 @@
     color: $titleColor;
 
     @include adaptiveValue("font-size", 18, 14);
+
+    @media (max-width: toEm(1100)) {
+      text-align: center;
+    }
   }
 
   /* .specials__button */
   &__button {
     margin-top: auto;
+    width: 100%;
   }
 
   /* .specials__right */
   &__right {
     display: grid;
     gap: toRem(4);
-    padding: 80px 28px 64px;
 
-    background: $secondColor url('@img/specials/spec-back.png') 0 0 no-repeat;
-    border-radius: toRem(20);
+
+    @media (min-width:$mobile) {
+      border-radius: toRem(20);
+      background: $secondColor url('@img/specials/spec-back.png') 0 0 no-repeat;
+      padding: 80px 28px 64px;
+    }
 
     @media (max-width:$mobile) {
       gap: toRem(2);
@@ -160,12 +188,18 @@
     @include adaptiveValue("margin-top", 30, 20);
 
 
+    @media (max-width: toEm(1100)) {
+      margin-bottom: toRem(30);
+    }
+
+
     .title-promo {
       margin-bottom: toRem(10);
     }
-.item-promo-box {
-  padding-left: 11px;
-}
+
+    .item-promo-box {
+      padding-left: 11px;
+    }
 
     .item-promo {
       position: relative;
@@ -174,8 +208,8 @@
 
       padding-left: toRem(12);
 
-      &::before{
-        content:'';
+      &::before {
+        content: '';
         position: absolute;
         width: 3px;
         height: 3px;
