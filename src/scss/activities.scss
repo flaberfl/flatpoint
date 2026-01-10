@@ -4,7 +4,6 @@
   background: url('@img/activities/background.png') center 0;
   // background-size: cover;
 
-  border: 1px solid red;
 
   @include adaptiveValue("padding-top", 90, 80);
 
@@ -140,7 +139,7 @@
   &__item {
     position: relative;
     height: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     // justify-content: flex-start;
     // justify-content: center;
@@ -198,9 +197,12 @@
   // .activities__left-side
 
   &__left-side {
-    max-width: 651px;
     // flex-shrink: 0;
     @include adaptiveValue("padding-top", 120, 50);
+    
+    @media (min-width:$tablet){
+      max-width: 651px;
+    }
   }
 
   // .activities__subtitle
@@ -218,13 +220,16 @@
   // .activities__text
 
   &__text {
-    max-width: toRem(426);
 
     font-family: $secondFamily;
     line-height: 136%;
     color: $mainColor;
 
     @include adaptiveValue("font-size", 18, 14);
+
+    @media (min-width:$tablet) {
+      max-width: toRem(426);
+    }
   }
 
   // .activities__right-side
