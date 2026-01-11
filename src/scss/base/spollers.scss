@@ -75,9 +75,15 @@
 	// overflow: hidden;
 	// border-radius: toRem(10)
 
-	&:last-child,
-	&:nth-last-child(2) {
+	&:last-child {
 		border-bottom: 1px solid rgba(46, 44, 40, 0.4);
+	}
+
+	@media (min-width:$tablet) {
+
+		&:nth-last-child(2) {
+			border-bottom: 1px solid rgba(46, 44, 40, 0.4);
+		}
 	}
 }
 

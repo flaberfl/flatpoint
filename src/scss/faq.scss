@@ -17,10 +17,25 @@
   &__button {
     width: 100%;
     margin-bottom: toRem(30);
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
   }
 
   /* .faq__text */
-  &__text {}
+  &__text {
+    font-family: var(--second-family);
+
+    font-size: 18px;
+    line-height: 136%;
+    text-align: center;
+    @include adaptiveValue("font-size", 18, 14);
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
 
   .spollers {
     display: flex;
@@ -30,6 +45,14 @@
 
     &__item {
       width: 49%;
+
+      @media (max-width: toEm(1230)) {
+        width: 48%;
+      }
+
+      @media (max-width:$tablet) {
+        width: 100%;
+      }
     }
   }
 }
