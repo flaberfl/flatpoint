@@ -121,17 +121,17 @@ function initSliders() {
 
 				},
 				480: {
-					slidesPerView: 1.2,
+					slidesPerView: 1.5,
 
 				},
-				600: {
-					slidesPerView: 1.5,
+				620: {
+					slidesPerView: 2,
 
 				},
 
 				768: {
 
-					slidesPerView: 1.5,
+					slidesPerView: 2,
 				},
 				992: {
 					slidesPerView: 2,

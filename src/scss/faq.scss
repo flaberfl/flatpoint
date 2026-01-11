@@ -10,7 +10,9 @@
 
   /* .faq__accordeon */
   &__accordeon {
-    margin-bottom: toRem(50);
+    @media (min-width:$mobile) {
+      margin-bottom: toRem(50);
+    }
   }
 
   /* .faq__button */

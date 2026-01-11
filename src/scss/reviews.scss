@@ -12,7 +12,21 @@
   &__content {
     display: grid;
     grid-template-columns: 1fr 59.435%;
-    // align-items: center;
+
+
+    @media (max-width: toEm(1280)) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      justify-content: center;
+
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    @media (max-width:$mobileSmall) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
   }
 
   /* .reviews__media */
@@ -21,6 +35,16 @@
     overflow: hidden;
     // @include adaptiveValue("border-radius", 20, 15);
 
+    @media (max-width: toEm(1280)) {
+      grid-row: 2;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+
+      aspect-ratio: 287 / 255;
+
+    }
+
     img {
       position: absolute;
       inset: 0;
@@ -28,6 +52,7 @@
       height: 100%;
       max-width: 100%;
       object-fit: cover;
+
       @include adaptiveValue("border-radius", 20, 15);
 
     }
@@ -45,13 +70,19 @@
   &__middle-box {
     position: relative;
   }
+
   /* .reviews__slider-box */
   &__slider-box {
     position: relative;
+    overflow: hidden;
     padding: toRem(50) toRem(60);
     background: $otherColor url('@img/values/b1.png') 0 0 no-repeat;
 
     @include adaptiveValue("border-radius", 30, 20);
+
+    @media (max-width:$mobileSmall){
+       padding: toRem(40) toRem(16) toRem(60); 
+    }
   }
 
   /* .reviews__slider */
@@ -139,6 +170,14 @@
   /* .reviews__button */
   &__button {
     width: 100%;
+
+    @media (max-width: toEm(1280)) {
+      margin-top: toRem(30);
+    }
+
+    @media (max-width:$mobile) {
+      margin-top: 20px;
+    }
   }
 
 
@@ -153,6 +192,14 @@
     top: 50%;
     transform: translate(0, -50%);
     z-index: 100;
+
+    @media (max-width: toEm(1280)) {
+      top: 24%;
+    }
+
+    @media (max-width:$mobileSmall) {
+      display: none;
+    }
   }
 
   .swiper-button-prev {
