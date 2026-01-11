@@ -93,6 +93,67 @@ function initSliders() {
 		});
 	}
 
+	if (document.querySelector('.reviews__slider')) { //Указываем класс нужного слайдера
+		//Создаем слайдер
+		new Swiper('.reviews__slider', { //Указываем класс нужного слайдера
+			//Подключаем модули слайдера
+			//для конкретного случая
+			observer: true,
+			observeParents: true,
+			slidesPerView: 2,
+			spaceBetween: 10,
+
+
+			// slidesPerView: 1, // Показываем 3 слайда
+			// slidesPerGroup: 1,
+
+			// loopAdditionalSlides: 3,
+			autoHeight: true,
+			speed: 800,
+
+			// // Брейкпоинты
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+
+				},
+				320: {
+					slidesPerView: 1.5,
+
+				},
+				480: {
+					slidesPerView: 2,
+
+				},
+				600: {
+					slidesPerView: 2.5,
+
+				},
+
+				768: {
+
+					slidesPerView: 3,
+				},
+				992: {
+					slidesPerView: 3.5,
+				},
+
+				1366: {
+					slidesPerView: 4,
+				},
+
+				1920: {
+					slidesPerView: 4,
+				},
+			},
+
+			// События
+			on: {
+
+			}
+		});
+	}
+
 }
 
 
