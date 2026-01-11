@@ -1,13 +1,13 @@
 // Подключение функционала "Чертоги Фрилансера"
 import {
-    isMobile
+  isMobile
 } from "./functions.js";
 // Подключение списка активных модулей
 import {
-    flsModules
+  flsModules
 } from "./modules.js";
 window.addEventListener("load", function () {
-    document.body.classList.remove("load");
+  document.body.classList.remove("load");
 });
 
 
@@ -15,94 +15,142 @@ window.addEventListener("load", function () {
 
 const header = document.querySelector('.header');
 if (header) {
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 40) {
-            header.classList.add('_fixed');
-        } else {
-            header.classList.remove('_fixed');
-        }
-    });
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 40) {
+      header.classList.add('_fixed');
+    } else {
+      header.classList.remove('_fixed');
+    }
+  });
 }
 
-
-
-
-
-// function positionTextRelativeToImage(imgId, textId) {
-//     console.log(`[PositionLog] Инициализация для ${imgId} и ${textId}`);
-
-//     const img = document.getElementById(imgId);
-//     const text = document.getElementById(textId);
-
-//     if (!img) {
-//         console.error(`[PositionLog] Изображение с ID ${imgId} не найдено`);
-//         return;
-//     }
-
-//     if (!text) {
-//         console.error(`[PositionLog] Текст с ID ${textId} не найден`);
-//         return;
-//     }
-
-//     // Проверяем, загружено ли изображение
-//     if (img.complete && img.naturalWidth !== 0) {
-//         console.log(`[PositionLog] Изображение ${imgId} уже загружено. Запускаем позиционирование.`);
-//         positionTextFixedToImage(img, text);
-//     } else {
-//         img.addEventListener('load', () => {
-//             console.log(`[PositionLog] Изображение ${imgId} загружено. Запускаем позиционирование.`);
-//             positionTextFixedToImage(img, text);
-//         });
-
-//         img.addEventListener('error', () => {
-//             console.error(`[PositionLog] Ошибка загрузки изображения ${imgId}`);
-//         });
-//     }
-// }
-
-// function positionTextFixedToImage(img, text) {
-//     console.log(`[PositionLog] Позиционируем текст относительно изображения: ${img.src}`);
-
-//     // Получаем реальные координаты изображения
-//     const imgRect = img.getBoundingClientRect();
-//     const containerRect = img.parentElement.getBoundingClientRect();
-
-//     console.log(`[PositionLog] Координаты изображения: top=${imgRect.top}, bottom=${imgRect.bottom}, left=${imgRect.left}, right=${imgRect.right}`);
-//     console.log(`[PositionLog] Координаты контейнера: top=${containerRect.top}, bottom=${containerRect.bottom}`);
-
-//     // Вычисляем позицию текста относительно контейнера
-//     const textBottom = imgRect.bottom - containerRect.top + 210; // 15px от нижнего края изображения
-//     const textLeft = imgRect.left - containerRect.left + 10; // 10px от левого края изображения
-
-//     // Применяем стили
-//     text.style.position = 'absolute';
-//     text.style.bottom = `calc(100% - ${textBottom}px)`; // Относительно контейнера
-//     text.style.left = `${textLeft}px`;
-
-//     console.log(`[PositionLog] Текст позиционирован: bottom=calc(100% - ${textBottom}px), left=${textLeft}px`);
-
-//     // Для отладки — покажем, где находится текст
-//     console.log(`[PositionLog] Реальная позиция текста: top=${text.offsetTop}, left=${text.offsetLeft}`);
-// }
-
-// // Инициализация для всех карточек
 // document.addEventListener('DOMContentLoaded', () => {
-//     console.log('[PositionLog] DOM загружен. Ищем карточки...');
+//     // Находим все строки
+//     const rows = document.querySelectorAll('.row');
 
-//     document.querySelectorAll('.activities__item').forEach((item, index) => {
-//         const img = item.querySelector('img');
-//         const text = item.querySelector('.activities__value');
+//     rows.forEach(row => {
+//         // Клонируем элементы, чтобы создать бесконечный эффект
+//         const originalBlocks = Array.from(row.children);
+//         const clones = originalBlocks.map(block => block.cloneNode(true));
 
-//         if (img && text) {
-//             // Генерируем уникальные ID, если их нет
-//             if (!img.id) img.id = `img-${index}`;
-//             if (!text.id) text.id = `text-${index}`;
+//         // Добавляем клонированные блоки в конец
+//         clones.forEach(clone => row.appendChild(clone));
 
-//             console.log(`[PositionLog] Найдена карточка ${index}: img=${img.id}, text=${text.id}`);
+//         // Определяем направление движения
+//         const isLeft = row.classList.contains('row--left');
+//         let offset = 0;
 
-//             positionTextRelativeToImage(img.id, text.id);
-//         } else {
-//             console.warn(`[PositionLog] Карточка ${index} не содержит img или text`);
+//         // Функция анимации
+//         function animate() {
+//             if (isLeft) {
+//                 offset -= 0.5; // Двигаем влево
+//             } else {
+//                 offset += 0.5; // Двигаем вправо
+//             }
+
+//             // Применяем трансформацию
+//             row.style.transform = `translateX(${offset}px)`;
+
+//             // Если первый элемент ушел за пределы экрана — перемещаем его в конец
+//             const containerWidth = row.parentElement.offsetWidth;
+//             const totalWidth = row.scrollWidth / 2; // Половина от общей ширины (т.к. дублируем)
+
+//             if (isLeft && offset < -totalWidth) {
+//                 offset = 0;
+//             } else if (!isLeft && offset > totalWidth) {
+//                 offset = 0;
+//             }
+
+//             requestAnimationFrame(animate);
 //         }
+
+//         animate(); // Запускаем анимацию
 //     });
 // });
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const rows = document.querySelectorAll('.row');
+
+//   rows.forEach(row => {
+//     // Клонируем оригинальные блоки
+//     const originalBlocks = Array.from(row.children);
+//     const clones = originalBlocks.map(block => block.cloneNode(true));
+
+//     // Добавляем клонированные блоки в конец
+//     clones.forEach(clone => row.appendChild(clone));
+
+//     // Направление
+//     const isLeft = row.classList.contains('row--left');
+//     let offset = 0;
+
+//     // Ширина одного блока
+//     const blockWidth = originalBlocks[0].offsetWidth;
+
+//     function animate() {
+//       if (isLeft) {
+//         offset -= 0.5; // Влево
+//       } else {
+//         offset += 0.5; // Вправо
+//       }
+
+//       row.style.transform = `translateX(${offset}px)`;
+
+//       if (isLeft) {
+//         // Если первый ушёл — в конец
+//         if (offset <= -blockWidth) {
+//           const first = row.firstElementChild;
+//           row.appendChild(first);
+//           offset = 0;
+//         }
+//       } else {
+//         // Для правого ряда — перемещаем **первый из клонов** в конец
+//         if (offset >= blockWidth) {
+//           // Находим первый элемент, который является клоном (начиная с originalBlocks.length)
+//           const cloneStartIndex = originalBlocks.length;
+//           const firstClone = row.children[cloneStartIndex];
+
+//           // Перемещаем его в конец
+//           row.appendChild(firstClone);
+
+//           // Сбрасываем сдвиг
+//           offset = 0;
+//         }
+//       }
+
+//       requestAnimationFrame(animate);
+//     }
+
+//     animate();
+//   });
+// });
+
+
+
+
+function rearrangeSlidesForMobile() {
+  const mobileList = document.querySelector('.mobile-list');
+
+  // Проверяем ширину экрана
+  if (window.innerWidth <= 767) {
+    // Очищаем мобильный список
+    mobileList.innerHTML = '';
+
+    // Находим .swiper-slide только из нужных слайдеров
+    const allSlides = document.querySelectorAll(
+      '.reviews__slider1 .swiper-slide, .reviews__slider2 .swiper-slide, .reviews__slider3 .swiper-slide'
+    );
+
+    // Клонируем каждый слайд и добавляем в мобильный список
+    allSlides.forEach(slide => {
+      const clonedSlide = slide.cloneNode(true);
+      mobileList.appendChild(clonedSlide);
+    });
+  }
+}
+
+// Запускаем при загрузке
+document.addEventListener('DOMContentLoaded', rearrangeSlidesForMobile);
+
+// И при изменении размера окна
+window.addEventListener('resize', rearrangeSlidesForMobile);
