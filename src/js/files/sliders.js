@@ -33,7 +33,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 4,
 			spaceBetween: 0,
-
+			// lazy: true,
 
 
 			// slidesPerView: 1, // Показываем 3 слайда
@@ -82,13 +82,6 @@ function initSliders() {
 			// События
 			on: {
 
-				// init: function () {
-				// 	updatePaginationVisibility.call(this);
-				// },
-				// slideChange: function () {
-				// 	updatePaginationVisibility.call(this);
-				// }
-
 			}
 		});
 	}
@@ -96,20 +89,26 @@ function initSliders() {
 	if (document.querySelector('.reviews__slider')) { //Указываем класс нужного слайдера
 		//Создаем слайдер
 		new Swiper('.reviews__slider', { //Указываем класс нужного слайдера
-			//Подключаем модули слайдера
-			//для конкретного случая
+
+			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 2,
 			spaceBetween: 10,
-
+			autoHeight: 'true',
 
 			// slidesPerView: 1, // Показываем 3 слайда
 			// slidesPerGroup: 1,
 
 			// loopAdditionalSlides: 3,
+			// lazy: true,
 			autoHeight: true,
 			speed: 800,
+
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
 
 			// // Брейкпоинты
 			breakpoints: {
@@ -118,32 +117,32 @@ function initSliders() {
 
 				},
 				320: {
-					slidesPerView: 1.5,
+					slidesPerView: 1,
 
 				},
 				480: {
-					slidesPerView: 2,
+					slidesPerView: 1.2,
 
 				},
 				600: {
-					slidesPerView: 2.5,
+					slidesPerView: 1.5,
 
 				},
 
 				768: {
 
-					slidesPerView: 3,
+					slidesPerView: 1.5,
 				},
 				992: {
-					slidesPerView: 3.5,
+					slidesPerView: 2,
 				},
 
 				1366: {
-					slidesPerView: 4,
+					slidesPerView: 2,
 				},
 
 				1920: {
-					slidesPerView: 4,
+					slidesPerView: 2,
 				},
 			},
 
