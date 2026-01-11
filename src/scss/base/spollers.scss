@@ -75,7 +75,8 @@
 	// overflow: hidden;
 	// border-radius: toRem(10)
 
-	&:last-child {
+	&:last-child,
+	&:nth-last-child(2) {
 		border-bottom: 1px solid rgba(46, 44, 40, 0.4);
 	}
 }

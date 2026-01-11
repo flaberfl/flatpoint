@@ -9,29 +9,27 @@
   }
 
   /* .faq__accordeon */
-  &__accordeon {}
+  &__accordeon {
+    margin-bottom: toRem(50);
+  }
 
   /* .faq__button */
-  &__button {}
+  &__button {
+    width: 100%;
+    margin-bottom: toRem(30);
+  }
 
   /* .faq__text */
   &__text {}
+
+  .spollers {
+    display: flex;
+    column-gap: toRem(24);
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__item {
+      width: 49%;
+    }
+  }
 }
-
-.pt180 {}
-
-.title-h2 {}
-
-.spollers {
-
-  /* .spollers__item */
-  &__item {}
-
-  /* .spollers__title */
-  &__title {}
-
-  /* .spollers__body */
-  &__body {}
-}
-
-.button {}
