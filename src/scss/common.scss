@@ -13,6 +13,10 @@
   }
 }
 
+.pt180 {
+  @include adaptiveValue("padding-top", 150, 80);
+}
+
 .intro__button--mob {
   // display: none !important;
 }

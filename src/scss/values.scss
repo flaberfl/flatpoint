@@ -1,0 +1,131 @@
+.values {
+  @include adaptiveValue("padding-top", 132, 80);
+
+  /* .values__container */
+  &__container {}
+
+  /* .values__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 70, 30);
+  }
+
+  /* .values__grid */
+  &__grid {
+    display: grid;
+    gap: toRem(6);
+  }
+
+  /* .values__item */
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 59.435%;
+
+    @media (max-width:$mobile) {
+      padding: toRem(40) toRem(18) toRem(18);
+      grid-template-columns: auto;
+      border-radius: toRem(20);
+    }
+
+
+    &:nth-child(1) {
+      @media (max-width:$mobile) {
+        background: $otherColor url('@img/values/b1.png') 0 0 no-repeat;
+      }
+
+      .values__text-box {
+        @media (min-width:$mobile) {
+          background: $otherColor url('@img/values/b1.png') 0 0 no-repeat;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @media (max-width:$mobile) {
+        background: $thirdColor url('@img/values/b2.png') 0 0 no-repeat;
+      }
+
+      .values__text-box {
+
+        @media (min-width:$mobile) {
+          background: $thirdColor url('@img/values/b2.png') 0 0 no-repeat;
+        }
+      }
+
+      .values__name {
+        color: #fff;
+      }
+
+      .values__text {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+
+    &:nth-child(3) {
+      @media (max-width:$mobile) {
+        background: $otherColor url('@img/values/b1.png') 0 0 no-repeat;
+      }
+
+      .values__text-box {
+        @media (min-width:$mobile) {
+          background: $otherColor url('@img/values/b1.png') 0 0 no-repeat;
+        }
+      }
+    }
+  }
+
+  /* .values__text-box */
+  &__text-box {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: toRem(20);
+
+    @media (min-width:$mobile) {
+      padding: 15px;
+    }
+
+    @media (max-width:$mobile) {
+      margin-bottom: toRem(30);
+    }
+  }
+
+  /* .values__name */
+  &__name {
+    max-width: toRem(340);
+    font-weight: 700;
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: $titleColor;
+
+    @include adaptiveValue("font-size", 30, 16);
+
+    @include adaptiveValue("margin-bottom", 30, 15);
+  }
+
+  /* .values__text */
+  &__text {
+    max-width: toRem(340);
+
+    font-family: var(--second-family);
+    font-size: 14px;
+    line-height: 136%;
+    text-align: center;
+
+    @include adaptiveValue("font-size", 18, 14);
+
+    @media (max-width:$mobile) {
+      max-width: toRem(460);
+    }
+  }
+
+  /* .values__image */
+  &__image {
+    // overflow: hidden;
+    max-width: 100%;
+    @include adaptiveValue("border-radius", 20, 15);
+  }
+}

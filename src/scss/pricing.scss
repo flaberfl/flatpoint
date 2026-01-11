@@ -1,5 +1,4 @@
 .pricing {
-  @include adaptiveValue("padding-top", 150, 80);
 
   /* .pricing__container */
   &__container {}
@@ -17,8 +16,8 @@
 
     @include adaptiveValue("gap", 114, 40);
 
-    @media (max-width:$mobile){
-       grid-template-columns: auto;
+    @media (max-width:$mobile) {
+      grid-template-columns: auto;
     }
   }
 
@@ -33,8 +32,8 @@
       @include adaptiveValue("margin-bottom", 36, 20);
     }
 
-    @media (max-width:$mobile){
-       grid-row: 2;
+    @media (max-width:$mobile) {
+      grid-row: 2;
       // justify-items: center;
     }
   }

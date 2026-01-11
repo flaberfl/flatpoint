@@ -1,0 +1,37 @@
+.faq {
+
+  /* .faq__container */
+  &__container {}
+
+  /* .faq__title */
+  &__title {
+    @include adaptiveValue("margin-bottom", 60, 30);
+  }
+
+  /* .faq__accordeon */
+  &__accordeon {}
+
+  /* .faq__button */
+  &__button {}
+
+  /* .faq__text */
+  &__text {}
+}
+
+.pt180 {}
+
+.title-h2 {}
+
+.spollers {
+
+  /* .spollers__item */
+  &__item {}
+
+  /* .spollers__title */
+  &__title {}
+
+  /* .spollers__body */
+  &__body {}
+}
+
+.button {}

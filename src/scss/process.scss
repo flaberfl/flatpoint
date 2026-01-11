@@ -1,6 +1,5 @@
 .process {
 
-  @include adaptiveValue("padding-top", 150, 80);
   @include adaptiveValue("margin-bottom", 70, 30);
 
   /* .process__container */

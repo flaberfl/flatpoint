@@ -103,6 +103,11 @@
 	@include adaptiveValue("font-size", 22, 16);
 	@include adaptiveValue("height", 80, 55);
 
+	.faq & {
+		font-weight: 400;
+		@include adaptiveValue("font-size", 20, 14);
+	}
+
 	&::marker,
 	&::-webkit-details-marker {
 		display: none;
