@@ -9,7 +9,10 @@
 
   // .footer__top
 
-  &__top {}
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 32%;
+  }
 
   // .footer__callback
 
@@ -28,22 +31,38 @@
   // .footer__tel
 
   &__tel {
-    color: #fff;
+    margin-bottom: toRem(6);
 
+    color: #fff;
     @include adaptiveValue("font-size", 40, 29);
   }
 
   // .footer__work-time
 
-  &__work-time {}
+  &__work-time {
+    font-family: var(--second-family);
+    color: rgba(255, 255, 255, 0.8);
+    @include adaptiveValue("font-size", 16, 12);
+  }
 
   // .footer__menu
 
-  &__menu {}
+  &__menu {
+    display: grid;
+    gap: toRem(3);
+  }
 
   // .footer__link
 
-  &__link {}
+  &__link {
+    font-family: var(--second-family);
+    color: #fff;
+    font-size: toRem(16);
+
+    @media (max-width:$mobile) {
+      font-size: toRem(14);
+    }
+  }
 
   // .footer__bottom
 
