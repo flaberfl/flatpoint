@@ -1,30 +1,56 @@
 .footer {
 
   padding-bottom: toRem(40);
-  // .footer__container
   background: $secondColor url('@img/footer-bg.png') 0 0;
-  @include adaptiveValue("padding-top", 65, 40);
+  @include adaptiveValue("padding-top", 70, 40);
 
-  &__container {}
-
-  // .footer__top
-
-  &__top {
+  &__container {
+    position: relative;
     display: grid;
-    
-    
-    @include adaptiveValue("padding-bottom", 78, 32);
-    
-    @media (min-width:toEm(901)) {
-      grid-template-columns: 1fr 32%;
-      border-bottom: 1px solid rgba(246, 244, 239, 0.43);
+    grid-template-columns: 1fr 32%;
 
+    @media (min-width:$tablet) {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+
+        bottom: 160px;
+
+        background: rgba(246, 244, 239, 0.43);
+      }
     }
+
+    @media (max-width:$tablet) {
+      grid-template-columns: auto;
+    }
+
+
   }
+
 
   // .footer__callback
 
-  &__callback {}
+  &__callback {
+    @include adaptiveValue("padding-bottom", 119, 30);
+  }
+
+  &__left {
+    display: grid;
+  }
+
+  &__right {
+    @media (max-width:$tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: toEm(390)){
+       flex-direction: column;
+       gap: toRem(35);
+    }
+  }
 
   // .footer__subname
 
@@ -33,14 +59,16 @@
     color: rgba(255, 255, 255, 0.8);
     @include adaptiveValue("font-size", 16, 12);
 
-    @include adaptiveValue("margin-bottom", 25, 13);
+    @include adaptiveValue("margin-bottom", 32, 13);
   }
 
   // .footer__tel
 
   &__tel {
-    margin-bottom: toRem(10);
+    margin-bottom: toRem(12);
 
+    letter-spacing: -0.5px;
+    font-family: $fontFamilyNr;
     color: #fff;
     @include adaptiveValue("font-size", 40, 29);
   }
@@ -49,6 +77,7 @@
 
   &__work-time {
 
+    letter-spacing: 0.6px;
     font-family: var(--second-family);
     color: rgba(255, 255, 255, 0.8);
     @include adaptiveValue("font-size", 16, 12);
@@ -58,7 +87,11 @@
 
   &__menu {
     display: grid;
-    gap: toRem(3);
+    gap: toRem(9);
+
+    @media (min-width:$tablet) {
+      padding-bottom: toRem(119);
+    }
   }
 
   // .footer__link
@@ -80,22 +113,14 @@
     }
   }
 
-  // .footer__bottom
-
-  &__bottom {
-    padding-top: toRem(38);
-
-    display: grid;
-    grid-template-columns: 1fr 32%;
-
-    @media (min-width:toEm(900)){
-        
-    }
-  }
 
   // .footer__logotool
 
   &__logotool {
+
+    @media (max-width:$tablet) {
+      grid-row: 1;
+    }
 
     p {
       font-family: var(--second-family);
@@ -140,7 +165,7 @@
       font-family: var(--second-family);
       line-height: 136%;
       color: rgba(255, 255, 255, 0.8);
-
+      letter-spacing: 0.4px;
       @include adaptiveValue("font-size", 14, 10);
     }
   }
