@@ -1,8 +1,9 @@
 .footer {
 
   padding-bottom: toRem(40);
-  @include adaptiveValue("padding-top", 65, 40);
   // .footer__container
+  background: $secondColor url('@img/footer-bg.png') 0 0;
+  @include adaptiveValue("padding-top", 65, 40);
 
   &__container {}
 
@@ -16,11 +17,21 @@
 
   // .footer__subname
 
-  &__subname {}
+  &__subname {
+    font-family: var(--second-family);
+    color: rgba(255, 255, 255, 0.8);
+    @include adaptiveValue("font-size", 16, 12);
+
+    @include adaptiveValue("margin-bottom", 25, 13);
+  }
 
   // .footer__tel
 
-  &__tel {}
+  &__tel {
+    color: #fff;
+
+    @include adaptiveValue("font-size", 40, 29);
+  }
 
   // .footer__work-time
 
