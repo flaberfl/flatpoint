@@ -87,7 +87,16 @@
 
   // .footer__logotool
 
-  &__logotool {}
+  &__logotool {
+
+    p {
+      font-family: var(--second-family);
+      line-height: 136%;
+      color: rgba(255, 255, 255, 0.8);
+
+      @include adaptiveValue("font-size", 16, 8);
+    }
+  }
 
   // .footer__logo
 
