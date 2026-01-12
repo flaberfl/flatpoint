@@ -1,3 +1,52 @@
 .footer {
-  height: toRem(800);
+
+  padding-bottom: toRem(40);
+  @include adaptiveValue("padding-top", 65, 40);
+  // .footer__container
+
+  &__container {}
+
+  // .footer__top
+
+  &__top {}
+
+  // .footer__callback
+
+  &__callback {}
+
+  // .footer__subname
+
+  &__subname {}
+
+  // .footer__tel
+
+  &__tel {}
+
+  // .footer__work-time
+
+  &__work-time {}
+
+  // .footer__menu
+
+  &__menu {}
+
+  // .footer__link
+
+  &__link {}
+
+  // .footer__bottom
+
+  &__bottom {}
+
+  // .footer__logotool
+
+  &__logotool {}
+
+  // .footer__logo
+
+  &__logo {}
+
+  // .footer__info
+
+  &__info {}
 }

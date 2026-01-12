@@ -1,5 +1,7 @@
 .contacts {
 
+  @include adaptiveValue("margin-bottom", 130, 40);
+
   /* .contacts__container */
   &__container {
     display: grid;
