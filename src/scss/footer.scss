@@ -11,11 +11,15 @@
 
   &__top {
     display: grid;
-    grid-template-columns: 1fr 32%;
-
-    border-bottom: 1px solid rgba(246, 244, 239, 0.43);
-
+    
+    
     @include adaptiveValue("padding-bottom", 78, 32);
+    
+    @media (min-width:toEm(901)) {
+      grid-template-columns: 1fr 32%;
+      border-bottom: 1px solid rgba(246, 244, 239, 0.43);
+
+    }
   }
 
   // .footer__callback
@@ -83,6 +87,10 @@
 
     display: grid;
     grid-template-columns: 1fr 32%;
+
+    @media (min-width:toEm(900)){
+        
+    }
   }
 
   // .footer__logotool
@@ -96,19 +104,29 @@
 
       @include adaptiveValue("font-size", 16, 8);
     }
+
+    @media (max-width: toEm(900)) {
+      margin-bottom: toRem(42);
+    }
   }
 
   // .footer__logo
 
   &__logo {
+
     transition: opacity 0.3s;
 
     @include adaptiveValue("margin-bottom", 18, 10);
+    // @include adaptiveValue("widtg", 542, 284);
 
     @media (any-hover: hover) {
       &:hover {
         opacity: .6;
       }
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 
