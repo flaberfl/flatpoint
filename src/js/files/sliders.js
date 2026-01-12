@@ -174,7 +174,7 @@ function initSliders() {
 		},
 
 			autoHeight: true,
-			speed: 1500,
+			speed: 11500,
 
 			// // Брейкпоинты
 			breakpoints: {
@@ -214,7 +214,7 @@ function initSliders() {
 		},
 
 			autoHeight: true,
-			speed: 2500,
+			speed: 11500,
 
 			// // Брейкпоинты
 			breakpoints: {
@@ -254,7 +254,7 @@ function initSliders() {
 		},
 
 			autoHeight: true,
-			speed: 1500,
+			speed: 12500,
 
 			// // Брейкпоинты
 			breakpoints: {

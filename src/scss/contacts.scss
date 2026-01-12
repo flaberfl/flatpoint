@@ -42,7 +42,7 @@
 
     color: $titleColor;
 
-    @include adaptiveValue("font-size", 30, 20);
+    @include adaptiveValue("font-size", 28, 20);
 
     .contacts__soc-links & {
       text-decoration: underline;
@@ -58,7 +58,7 @@
   &__soc-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: toRem(6);
+    gap: toRem(10);
   }
 
   /* .contacts__map */

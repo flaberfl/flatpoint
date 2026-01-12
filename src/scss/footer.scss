@@ -58,6 +58,13 @@
     font-family: var(--second-family);
     color: #fff;
     font-size: toRem(16);
+    transition: opacity 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: .6;
+      }
+    }
 
     @media (max-width:$mobile) {
       font-size: toRem(14);
@@ -74,7 +81,15 @@
 
   // .footer__logo
 
-  &__logo {}
+  &__logo {
+    transition: opacity 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
 
   // .footer__info
 
