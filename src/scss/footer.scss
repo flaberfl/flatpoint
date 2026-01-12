@@ -12,6 +12,10 @@
   &__top {
     display: grid;
     grid-template-columns: 1fr 32%;
+
+    border-bottom: 1px solid rgba(246, 244, 239, 0.43);
+
+    @include adaptiveValue("padding-bottom", 78, 32);
   }
 
   // .footer__callback
@@ -31,7 +35,7 @@
   // .footer__tel
 
   &__tel {
-    margin-bottom: toRem(6);
+    margin-bottom: toRem(10);
 
     color: #fff;
     @include adaptiveValue("font-size", 40, 29);
@@ -40,6 +44,7 @@
   // .footer__work-time
 
   &__work-time {
+
     font-family: var(--second-family);
     color: rgba(255, 255, 255, 0.8);
     @include adaptiveValue("font-size", 16, 12);
@@ -73,7 +78,12 @@
 
   // .footer__bottom
 
-  &__bottom {}
+  &__bottom {
+    padding-top: toRem(38);
+
+    display: grid;
+    grid-template-columns: 1fr 32%;
+  }
 
   // .footer__logotool
 
@@ -84,6 +94,8 @@
   &__logo {
     transition: opacity 0.3s;
 
+    @include adaptiveValue("margin-bottom", 18, 10);
+
     @media (any-hover: hover) {
       &:hover {
         opacity: .6;
@@ -93,5 +105,16 @@
 
   // .footer__info
 
-  &__info {}
+  &__info {
+
+    p,
+    a {
+      display: block;
+      font-family: var(--second-family);
+      line-height: 136%;
+      color: rgba(255, 255, 255, 0.8);
+
+      @include adaptiveValue("font-size", 14, 10);
+    }
+  }
 }
