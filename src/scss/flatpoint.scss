@@ -3,7 +3,7 @@
   background: url('@img/backg.png') center 0;
   // background-size: cover;
 
-  border: 1px solid red;
+  // border: 1px solid red;
 
   @include adaptiveValue("margin-top", -300, -610);
   @include adaptiveValue("padding-top", 536, 444);

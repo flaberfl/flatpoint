@@ -14,13 +14,13 @@
 		padding-top: toRem(8);
 
 		@media (max-width: toEm(1430)) {
-			padding-left: 15px;
-			padding-right: 15px;
+			// padding-left: 15px;
+			// padding-right: 15px;
 		}
 
-		@media (max-width:$mobile) {
-			padding-left: 7px;
-			padding-right: 7px;
+		@media (max-width:$tablet) {
+			// padding-right: 7px;
+			// padding-left: 7px;
 		}
 	}
 
@@ -46,11 +46,22 @@
 
 			backdrop-filter: none;
 			background: #F6F4EF;
+
+			@media (max-width:$tablet) {
+				background-color: #fff;
+			}
 		}
 
 		@media (max-width:$tablet) {
+			padding-left: toRem(10);
+			padding-right: toRem(10);
+
 			backdrop-filter: none;
 			background: #fff;
+		}
+
+		@media (max-width:$mobile) {
+			height: toRem(40) !important;
 		}
 	}
 
@@ -68,6 +79,7 @@
 
 		.logo-mobile {
 			display: none;
+			@include adaptiveValue("width", 212, 137);
 
 			@media (max-width:$tablet) {
 				display: block;
@@ -83,6 +95,30 @@
 		}
 
 	}
+
+	&__soc-links {
+		display: none;
+		margin-bottom: toRem(30);
+
+		@media (max-width:$tablet) {
+			max-width: 300px;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+
+			gap: toRem(12);
+
+			.contacts__link {
+				font-family: var(--second-family);
+				font-size: 16px;
+				text-decoration: underline;
+				text-decoration-skip-ink: none;
+				color: $titleColor;
+			}
+		}
+
+	}
+
+
 
 	&__link {
 
@@ -117,6 +153,13 @@
 		@media (max-width:$tablet) {
 			background-color: $secondColor;
 			color: #fff;
+
+			// max-width: 286px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 50px;
+			height: 40px;
 		}
 	}
 
@@ -127,14 +170,24 @@
 		display: contents;
 	}
 
+	&__list {
+		@media (max-width:$tablet) {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: toRem(10);
+		}
+	}
+
 	&__body {
 		display: flex;
 		width: 100%;
 		gap: toRem(10);
 
+		
 		transition: all 1s;
-
+		
 		@media (max-width:$tablet) {
+			// background-color: red !important;
 			flex-direction: column;
 			position: fixed;
 			overflow: auto;
@@ -145,8 +198,10 @@
 			background-color: #fff;
 			visibility: hidden;
 			opacity: 0;
-			padding: 20px 9px 25px;
+			padding: 14px 15px 25px 15px;
 			gap: 8px !important;
+
+			z-index: 10;
 
 			.menu-open & {
 				// transform: scale(1);
@@ -155,8 +210,17 @@
 				visibility: visible;
 				z-index: 700;
 				// background-color: $whiteColor;
-				transform: translate(0, 78px);
+				transform: translate(0, 62px);
 				border-radius: 0 0 6px 6px;
+
+				// margin-left: -15px;
+				// margin-right: -15px;
+			}
+		}
+
+		@media (max-width:$mobile) {
+			.menu-open & {
+				transform: translate(0, 45px);
 			}
 		}
 	}
@@ -168,9 +232,21 @@
 		font-family: $secondFamily;
 		color: #fff;
 
+		@media (max-width:$tablet) {
+			padding: 6px 0px;
+		}
+
+		.menu-open & {
+			color: $mainColor;
+		}
+
 		&:first-child {
 			border-radius: 29px;
 			border: 1px solid #fff;
+
+			@media (max-width:$tablet) {
+				display: none;
+			}
 		}
 
 		._fixed & {
@@ -195,7 +271,7 @@
 	@media (max-width: $tablet) {
 		display: block;
 		position: relative;
-		width: toRem(30);
+		width: toRem(24);
 		height: toRem(20);
 		z-index: 990;
 
