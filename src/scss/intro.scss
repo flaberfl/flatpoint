@@ -143,6 +143,13 @@
     letter-spacing: -0.01em;
     text-align: center;
     color: #fff;
+    transition: all 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #de080c;
+      }
+    }
 
     @media (min-width: toEm(1200)) {
       width: toRem(170);
@@ -163,7 +170,7 @@
 
     &--mob {
       display: none;
-      
+
       @media (max-width:$mobile) {
         position: fixed;
         display: flex;

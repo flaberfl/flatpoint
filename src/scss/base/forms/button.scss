@@ -17,11 +17,17 @@
 	justify-content: center;
 	background: var(--third-color);
 
+	transition: all 0.3s;
+
 	@include adaptiveValue("font-size", 18, 12);
 
 	@include adaptiveValue("height", 65, 50);
 
-
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #de080c;
+		}
+	}
 
 	&:active {}
 
@@ -32,7 +38,3 @@
 	// 	}
 	// }
 }
-
-
-
-

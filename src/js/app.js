@@ -204,11 +204,11 @@ import './files/scroll/lazyload.js';
 // import './libs/parallax.js'
 
 // Функции работы скроллом
-// import * as flsScroll from "./files/scroll/scroll.js";
+import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация: https://start-template.ru/modul-prokrutka-k-nuzhnomu-bloku-plavnaya-navigacziya-po-stranicze-chertogi-frilansera-v3-0-0/
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функциональность добавления классов в хеддер при прокрутке
 // Документация: https://start-template.ru/modul-dobavleniya-klassov-v-shapku-pri-prokrutke-straniczy-chertogi-frilansera-v3-0-0/
