@@ -98,7 +98,7 @@
 
 	&__soc-links {
 		display: none;
-		margin-bottom: toRem(30);
+		margin-bottom: toRem(20);
 
 		@media (max-width:$tablet) {
 			max-width: 300px;
@@ -220,7 +220,7 @@
 
 		@media (max-width:$mobile) {
 			.menu-open & {
-				transform: translate(0, 45px);
+				transform: translate(0, 41px);
 			}
 		}
 	}

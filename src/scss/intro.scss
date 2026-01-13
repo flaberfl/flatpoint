@@ -66,7 +66,7 @@
     @include adaptiveValue("padding-top", 520, 60);
 
     @media (max-width:$mobile) {
-      padding-top: toRem(130);
+      padding-top: toRem(80);
       margin-bottom: 30px;
     }
   }
