@@ -40,6 +40,10 @@
 
 		transition: all 0.3s;
 
+		.header-page & {
+			backdrop-filter: blur(52px);
+			background-color: #fff;
+		}
 
 		._fixed & {
 			height: toRem(60);
@@ -145,6 +149,11 @@
 		color: $thirdColor;
 		transition: all 0.3s;
 
+
+		.header-page & {
+			
+		}
+
 		._fixed & {
 			background-color: $secondColor;
 			color: #fff;
@@ -183,9 +192,9 @@
 		width: 100%;
 		gap: toRem(10);
 
-		
+
 		transition: all 1s;
-		
+
 		@media (max-width:$tablet) {
 			// background-color: red !important;
 			flex-direction: column;
