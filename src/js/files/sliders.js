@@ -168,7 +168,7 @@ function initSliders() {
 			// loop: true,
 
 			autoplay: {
-			delay: 1000,
+			delay: 0,
 			// reverseDirection: true,
 			disableOnInteraction: false,
 		},
@@ -208,7 +208,7 @@ function initSliders() {
 			// loop: true,
 
 			autoplay: {
-			delay: 1,
+			delay: 0,
 			reverseDirection: true,
 			disableOnInteraction: false,
 		},
@@ -248,7 +248,7 @@ function initSliders() {
 			// loop: true,
 
 			autoplay: {
-			delay: 1000,
+			delay: 0,
 			// reverseDirection: true,
 			disableOnInteraction: false,
 		},
