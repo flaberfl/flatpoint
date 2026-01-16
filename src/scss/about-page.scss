@@ -293,6 +293,16 @@
     @media (max-width:$tablet) {
       grid-template-columns: auto;
       justify-items: center;
+      gap: toRem(34);
+    }
+
+    @media (max-width:$mobile) {
+      margin-left: -15px;
+      margin-right: -15px;
+
+      
+
+      padding: toRem(45) toRem(16) toRem(16) toRem(16);
     }
   }
 
@@ -306,6 +316,10 @@
     color: #fff;
 
     @include adaptiveValue("margin-bottom", 40, 30);
+
+    @media (max-width:$tablet) {
+      text-align: center;
+    }
   }
 
   // .about-page-partners__text
@@ -317,6 +331,10 @@
 
     @include adaptiveValue("font-size", 20, 14);
     @include adaptiveValue("margin-bottom", 50, 40);
+
+    @media (max-width:$tablet) {
+      text-align: center;
+    }
   }
 
   // .about-page-partners__link
@@ -324,26 +342,32 @@
   &__link {
     display: flex;
     align-items: center;
+    // justify-content: center;
+    // text-align: left;
     gap: toRem(10);
 
     background-color: #fff;
 
     border-radius: 54px;
     padding: 11px 16px;
-    width: 328px;
+    // max-width: 328px;
     height: 78px;
 
-    @media (max-width:$tablet){
+    @include adaptiveValue("width", 328, 206);
+
+    @media (max-width:$tablet) {
       margin: 0 auto;
     }
 
     @media (max-width:$mobile) {
-      padding: 11px 10px;
-      width: 206px;
+      // padding: 11px 10px;
+      // width: 206px;
       height: 50px;
     }
 
-
+    svg {
+      @include adaptiveValue("width", 56, 34);
+    }
 
     span {
       font-family: $fontFamilyNr;
