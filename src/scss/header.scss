@@ -41,8 +41,8 @@
 		transition: all 0.3s;
 
 		.other-page & {
-			backdrop-filter: blur(52px);
-			background-color: #fff;
+			backdrop-filter: blur(52px) !important;
+			background-color: #fff !important;
 		}
 
 		._fixed &,
@@ -217,12 +217,23 @@
 				opacity: 1;
 				visibility: visible;
 				z-index: 700;
-				// background-color: $whiteColor;
 				transform: translate(0, 62px);
 				border-radius: 0 0 6px 6px;
 
+
+
 				// margin-left: -15px;
 				// margin-right: -15px;
+			}
+
+			.other-page & {
+				.menu-open & {
+					transform: translate(0, 54px);
+
+					@media (max-width:$mobile) {
+						transform: translate(0, 34px);
+					}
+				}
 			}
 		}
 
