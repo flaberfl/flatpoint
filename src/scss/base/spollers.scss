@@ -122,13 +122,13 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			color: rgba(31, 30, 27, 0.6);
+			color: rgba(31, 30, 27, 1);
 
 			._spoller-init & {
 
 				&::before,
 				&::after {
-					background-color: rgba(31, 30, 27, 0.6);
+					background-color: rgba(31, 30, 27, 1);
 				}
 			}
 		}
