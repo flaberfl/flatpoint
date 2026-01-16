@@ -251,4 +251,52 @@ document.addEventListener('DOMContentLoaded', function () {
     speed: 0.5,
     reverse: false
   });
+
+
+  // Дополнительная логика для перехвата скролла
+  // const sliderElement = document.querySelector('.activities__slider');
+
+  // sliderElement.addEventListener('wheel', function (e) {
+  //   // Если слайдер достиг конца/начала, разрешаем скролл страницы
+  //   if ((e.deltaY > 0 && swiper.isEnd) || (e.deltaY < 0 && swiper.isBeginning)) {
+  //     // Не предотвращаем событие, чтобы страница могла скроллиться
+  //     document.body.style.overflow = '';
+  //   } else {
+  //     // Предотвращаем скролл страницы, когда слайдер может двигаться
+  //     e.preventDefault();
+  //     if (e.deltaY > 0) {
+  //       swiper.slideNext();
+  //     } else {
+  //       swiper.slidePrev();
+  //     }
+  //   }
+  // });
+
+  // const sliderElement = document.querySelector('.activities__slider');
+  // let lastScrollTime = 0;
+
+  // sliderElement.addEventListener('wheel', function (e) {
+  //   const now = Date.now();
+  //   if (now - lastScrollTime < 150) return; // Анти-дёргание
+  //   lastScrollTime = now;
+
+  //   // Проверяем, где находится слайдер
+  //   const isAtEnd = swiper.isEnd;
+  //   const isAtBeginning = swiper.isBeginning;
+
+  //   if ((e.deltaY > 0 && isAtEnd) || (e.deltaY < 0 && isAtBeginning)) {
+  //     // Если достигли конца/начала, позволяем скроллить страницу
+  //     // Но не предотвращаем событие
+  //     return;
+  //   } else {
+  //     // Если можно скроллить слайдер, предотвращаем скролл страницы
+  //     e.preventDefault();
+  //     if (e.deltaY > 0) {
+  //       swiper.slideNext();
+  //     } else {
+  //       swiper.slidePrev();
+  //     }
+  //   }
+  // });
+
 });
