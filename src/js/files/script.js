@@ -129,6 +129,12 @@ if (header) {
 
 
 function rearrangeSlidesForMobile() {
+  // Проверяем, находимся ли мы на главной странице (по классу 'main' у body)
+  if (!document.body.classList.contains('main')) {
+    // Если класс 'main' отсутствует, прекращаем выполнение функции
+    return;
+  }
+
   const mobileList = document.querySelector('.mobile-list');
 
   // Проверяем ширину экрана
@@ -146,6 +152,10 @@ function rearrangeSlidesForMobile() {
       const clonedSlide = slide.cloneNode(true);
       mobileList.appendChild(clonedSlide);
     });
+  } else {
+    // Опционально: если ширина > 767px, можно очистить mobileList или вернуть слайды обратно
+    // В зависимости от желаемого поведения
+    // mobileList.innerHTML = '';
   }
 }
 

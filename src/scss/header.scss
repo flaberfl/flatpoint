@@ -40,12 +40,13 @@
 
 		transition: all 0.3s;
 
-		.header-page & {
+		.other-page & {
 			backdrop-filter: blur(52px);
 			background-color: #fff;
 		}
 
-		._fixed & {
+		._fixed &,
+		.other-page & {
 			height: toRem(60);
 
 			backdrop-filter: none;
@@ -76,7 +77,8 @@
 				display: none;
 			}
 
-			._fixed & {
+			._fixed &,
+			.other-page & {
 				display: none;
 			}
 		}
@@ -89,7 +91,8 @@
 				display: block;
 			}
 
-			._fixed & {
+			._fixed &,
+			.other-page & {
 				display: block;
 			}
 		}
@@ -149,12 +152,8 @@
 		color: $thirdColor;
 		transition: all 0.3s;
 
-
-		.header-page & {
-			
-		}
-
-		._fixed & {
+		._fixed &,
+		.other-page & {
 			background-color: $secondColor;
 			color: #fff;
 		}
@@ -258,7 +257,8 @@
 			}
 		}
 
-		._fixed & {
+		._fixed &,
+		.other-page & {
 			color: $mainColor;
 
 			&:first-child {
