@@ -253,50 +253,74 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // Дополнительная логика для перехвата скролла
-  // const sliderElement = document.querySelector('.activities__slider');
-
-  // sliderElement.addEventListener('wheel', function (e) {
-  //   // Если слайдер достиг конца/начала, разрешаем скролл страницы
-  //   if ((e.deltaY > 0 && swiper.isEnd) || (e.deltaY < 0 && swiper.isBeginning)) {
-  //     // Не предотвращаем событие, чтобы страница могла скроллиться
-  //     document.body.style.overflow = '';
-  //   } else {
-  //     // Предотвращаем скролл страницы, когда слайдер может двигаться
-  //     e.preventDefault();
-  //     if (e.deltaY > 0) {
-  //       swiper.slideNext();
-  //     } else {
-  //       swiper.slidePrev();
-  //     }
-  //   }
-  // });
-
-  // const sliderElement = document.querySelector('.activities__slider');
-  // let lastScrollTime = 0;
-
-  // sliderElement.addEventListener('wheel', function (e) {
-  //   const now = Date.now();
-  //   if (now - lastScrollTime < 150) return; // Анти-дёргание
-  //   lastScrollTime = now;
-
-  //   // Проверяем, где находится слайдер
-  //   const isAtEnd = swiper.isEnd;
-  //   const isAtBeginning = swiper.isBeginning;
-
-  //   if ((e.deltaY > 0 && isAtEnd) || (e.deltaY < 0 && isAtBeginning)) {
-  //     // Если достигли конца/начала, позволяем скроллить страницу
-  //     // Но не предотвращаем событие
-  //     return;
-  //   } else {
-  //     // Если можно скроллить слайдер, предотвращаем скролл страницы
-  //     e.preventDefault();
-  //     if (e.deltaY > 0) {
-  //       swiper.slideNext();
-  //     } else {
-  //       swiper.slidePrev();
-  //     }
-  //   }
-  // });
 
 });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const items = document.querySelectorAll('.values__item');
+
+//   if (items.length === 0) return;
+
+//   let ticking = false;
+
+//   // Функция для обновления позиций элементов при скролле
+//   function updateItemsPosition() {
+//     const scrollTop = window.pageYOffset;
+//     const windowHeight = window.innerHeight;
+
+//     items.forEach((item, index) => {
+//       const rect = item.getBoundingClientRect();
+//       const itemTop = rect.top + scrollTop;
+//       const itemBottom = rect.bottom + scrollTop;
+
+//       // Рассчитываем положение элемента относительно области просмотра
+//       const elementCenter = (itemTop + itemBottom) / 2;
+//       const viewportCenter = scrollTop + windowHeight / 2;
+
+//       // Расстояние от центра элемента до центра экрана
+//       const distance = elementCenter - viewportCenter;
+//       const normalizedDistance = Math.abs(distance) / (windowHeight / 2);
+
+//       // Определяем, насколько элемент близок к центру экрана (0 - в центре, 1 - на краю)
+//       const visibility = Math.max(0, 1 - normalizedDistance);
+
+//       // Рассчитываем масштаб и смещение
+//       const scale = 0.7 + (visibility * 0.3); // От 0.7 до 1.0
+//       const translateY = -distance * 0.1; // Небольшое смещение по Y
+
+//       // Рассчитываем z-index в зависимости от близости к центру
+//       const zIndex = 100 - Math.abs(index * 10 - Math.floor(visibility * 100));
+
+//       // Применяем стили
+//       item.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+//       item.style.zIndex = zIndex.toString();
+//       item.style.opacity = String(0.6 + (visibility * 0.4));
+
+//       // Добавляем класс активности для центрального элемента
+//       if (visibility > 0.8) {
+//         item.classList.add('values__item--active');
+//       } else {
+//         item.classList.remove('values__item--active');
+//       }
+//     });
+
+//     ticking = false;
+//   }
+
+//   function requestTick() {
+//     if (!ticking) {
+//       requestAnimationFrame(updateItemsPosition);
+//       ticking = true;
+//     }
+//   }
+
+//   // Добавляем обработчик скролла
+//   window.addEventListener('scroll', requestTick);
+
+//   // Также добавляем обработчик resize для перерасчета при изменении размера окна
+//   window.addEventListener('resize', requestTick);
+
+//   // Вызываем сразу для начальной позиции
+//   updateItemsPosition();
+// });
