@@ -3,6 +3,8 @@
 
   background: url('@img/about-page/back.png') center 0;
 
+  @include adaptiveValue("padding-bottom", 220, 0);
+
   // .about-page-about__container
 
   &__container {
@@ -43,8 +45,8 @@
   &__title {
     @include adaptiveValue("margin-bottom", 50, 30);
 
-    @media (max-width:$mobile){
-       text-align: center; 
+    @media (max-width:$mobile) {
+      text-align: center;
     }
   }
 
@@ -68,8 +70,8 @@
       }
     }
 
-    @media (max-width:$mobile){
-       text-align: center; 
+    @media (max-width:$mobile) {
+      text-align: center;
     }
   }
 
@@ -82,4 +84,111 @@
   }
 }
 
-.title-h2 {}
+
+.about-page-stat {
+
+  @include adaptiveValue("margin-top", -100, 0);
+
+  // .about-page-stat__container
+
+  &__container {}
+
+  // .about-page-stat__title
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 45);
+  }
+
+  // .about-page-stat__items
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    // grid-template-rows: 1fr 1fr;
+    justify-content: space-between;
+    // width: 100%;
+
+    // overflow-x: auto;
+    // scrollbar-width: none;
+
+    @include adaptiveValue("gap", 25, 15);
+
+    @media (max-width: toEm(1360)) {
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-items: center;
+    }
+
+    @media (max-width:$tablet) {
+      grid-template-columns: repeat(8, auto);
+      
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+  }
+
+  // .about-page-stat__item
+
+  &__item {}
+}
+
+
+
+.about-stat-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  padding: toRem(30) toRem(25);
+
+
+  background-color: #fff;
+
+  @include adaptiveValue("padding-top", 30, 16);
+  @include adaptiveValue("padding-bottom", 30, 16);
+  @include adaptiveValue("padding-left", 25, 16);
+  @include adaptiveValue("padding-right", 25, 16);
+  @include adaptiveValue("height", 287, 180);
+  @include adaptiveValue("border-radius", 20, 10);
+  @include adaptiveValue("width", 317, 212);
+
+  // .about-stat-item__title
+
+  &__title {
+    line-height: 118%;
+    letter-spacing: -0.03em;
+    color: #3e5128;
+
+    white-space: nowrap;
+
+    @include adaptiveValue("font-size", 40, 22);
+
+  }
+
+  // .about-stat-item__text
+
+  &__text {
+    line-height: 136%;
+    color: $titleColor;
+
+    @include adaptiveValue("font-size", 18, 14);
+  }
+
+  // .about-stat-item__img
+
+  &__img {
+    padding: 0;
+    // aspect-ratio: 318 / 287;
+
+    img {
+      max-width: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+
+    }
+
+  }
+}
