@@ -283,6 +283,12 @@
 }
 
 
+.reviews__slider1,
+.reviews__slider2,
+.reviews__slider3 {
+  overflow: visible !important;
+}
+
 
 /* Скрываем Swiper-ы на мобильных */
 @media (max-width: 767px) {
@@ -339,8 +345,8 @@
   border-radius: 20px;
   overflow: hidden;
 
-  @media (max-width:$mobileSmall){
-     height: 280px; 
+  @media (max-width:$mobileSmall) {
+    height: 280px;
   }
 }
 

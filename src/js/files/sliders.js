@@ -154,126 +154,126 @@ function initSliders() {
 	}
 
 
-	if (document.querySelector('.reviews__slider1')) { //Указываем класс нужного слайдера
-		//Создаем слайдер
-		new Swiper('.reviews__slider1', { //Указываем класс нужного слайдера
-			//Подключаем модули слайдера
-			//для конкретного случая
-			modules: [Autoplay],
-			observer: true,
-			observeParents: true,
-			// slidesPerView: "auto",
-			spaceBetween: 8,
-			lazy: true,
-			// loop: true,
+	// if (document.querySelector('.reviews__slider1')) { //Указываем класс нужного слайдера
+	// 	//Создаем слайдер
+	// 	new Swiper('.reviews__slider1', { //Указываем класс нужного слайдера
+	// 		//Подключаем модули слайдера
+	// 		//для конкретного случая
+	// 		modules: [Autoplay],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		// slidesPerView: "auto",
+	// 		spaceBetween: 8,
+	// 		lazy: true,
+	// 		// loop: true,
 
-			autoplay: {
-			delay: 0,
-			// reverseDirection: true,
-			disableOnInteraction: false,
-		},
+	// 		autoplay: {
+	// 		delay: 0,
+	// 		// reverseDirection: true,
+	// 		disableOnInteraction: false,
+	// 	},
 
-			autoHeight: true,
-			speed: 11500,
+	// 		autoHeight: true,
+	// 		speed: 11500,
 
-			// // Брейкпоинты
-			breakpoints: {
-				0: {
-					slidesPerView: "auto",
+	// 		// // Брейкпоинты
+	// 		breakpoints: {
+	// 			0: {
+	// 				slidesPerView: "auto",
 
-				},
+	// 			},
 
-				1920: {
-					slidesPerView: "auto",
-				},
-			},
+	// 			1920: {
+	// 				slidesPerView: "auto",
+	// 			},
+	// 		},
 
-			// События
-			on: {
+	// 		// События
+	// 		on: {
 
-			}
-		});
-	}
-	if (document.querySelector('.reviews__slider2')) { //Указываем класс нужного слайдера
-		//Создаем слайдер
-		new Swiper('.reviews__slider2', { //Указываем класс нужного слайдера
-			//Подключаем модули слайдера
-			//для конкретного случая
-			modules: [Autoplay],
-			observer: true,
-			observeParents: true,
-			slidesPerView: "auto",
-			spaceBetween: 8,
-			lazy: true,
-			// loop: true,
+	// 		}
+	// 	});
+	// }
+	// if (document.querySelector('.reviews__slider2')) { //Указываем класс нужного слайдера
+	// 	//Создаем слайдер
+	// 	new Swiper('.reviews__slider2', { //Указываем класс нужного слайдера
+	// 		//Подключаем модули слайдера
+	// 		//для конкретного случая
+	// 		modules: [Autoplay],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: "auto",
+	// 		spaceBetween: 8,
+	// 		lazy: true,
+	// 		// loop: true,
 
-			autoplay: {
-			delay: 0,
-			reverseDirection: true,
-			disableOnInteraction: false,
-		},
+	// 		autoplay: {
+	// 		delay: 0,
+	// 		reverseDirection: true,
+	// 		disableOnInteraction: false,
+	// 	},
 
-			autoHeight: true,
-			speed: 11500,
+	// 		autoHeight: true,
+	// 		speed: 11500,
 
-			// // Брейкпоинты
-			breakpoints: {
-				0: {
-					slidesPerView: "auto",
+	// 		// // Брейкпоинты
+	// 		breakpoints: {
+	// 			0: {
+	// 				slidesPerView: "auto",
 
-				},
+	// 			},
 
-				1920: {
-					slidesPerView: "auto",
-				},
-			},
+	// 			1920: {
+	// 				slidesPerView: "auto",
+	// 			},
+	// 		},
 
-			// События
-			on: {
+	// 		// События
+	// 		on: {
 
-			}
-		});
-	}
-	if (document.querySelector('.reviews__slider3')) { //Указываем класс нужного слайдера
-		//Создаем слайдер
-		new Swiper('.reviews__slider3', { //Указываем класс нужного слайдера
-			//Подключаем модули слайдера
-			//для конкретного случая
-			modules: [Autoplay],
-			observer: true,
-			observeParents: true,
-			// slidesPerView: "auto",
-			spaceBetween: 8,
-			lazy: true,
-			// loop: true,
+	// 		}
+	// 	});
+	// }
+	// if (document.querySelector('.reviews__slider3')) { //Указываем класс нужного слайдера
+	// 	//Создаем слайдер
+	// 	new Swiper('.reviews__slider3', { //Указываем класс нужного слайдера
+	// 		//Подключаем модули слайдера
+	// 		//для конкретного случая
+	// 		modules: [Autoplay],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		// slidesPerView: "auto",
+	// 		spaceBetween: 8,
+	// 		lazy: true,
+	// 		// loop: true,
 
-			autoplay: {
-			delay: 0,
-			// reverseDirection: true,
-			disableOnInteraction: false,
-		},
+	// 		autoplay: {
+	// 		delay: 0,
+	// 		// reverseDirection: true,
+	// 		disableOnInteraction: false,
+	// 	},
 
-			autoHeight: true,
-			speed: 12500,
+	// 		autoHeight: true,
+	// 		speed: 12500,
 
-			// // Брейкпоинты
-			breakpoints: {
-				0: {
-					slidesPerView: "auto",
+	// 		// // Брейкпоинты
+	// 		breakpoints: {
+	// 			0: {
+	// 				slidesPerView: "auto",
 
-				},
+	// 			},
 
-				1920: {
-					slidesPerView: "auto",
-				},
-			},
+	// 			1920: {
+	// 				slidesPerView: "auto",
+	// 			},
+	// 		},
 
-			// События
-			on: {
+	// 		// События
+	// 		on: {
 
-			}
-		});
-	}
+	// 		}
+	// 	});
+	// }
 
 
 }
