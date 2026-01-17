@@ -249,17 +249,27 @@
     padding: 8px;
     border-radius: 101px;
 
+
     p {
 
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
-      overflow: hidden;
       text-overflow: ellipsis;
 
       @media (min-width:$mobile) {
         white-space: nowrap;
       }
+
+      @media (max-width:$mobile) {
+        overflow: hidden;
+      }
+    }
+  }
+
+  .reviews__slide2 {
+    @media (min-width:$tablet) {
+      padding-right: toRem(70);
     }
   }
 

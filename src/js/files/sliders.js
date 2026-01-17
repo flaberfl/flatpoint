@@ -317,6 +317,7 @@ function initSliders() {
 			// lazy: true,
 			autoHeight: true,
 			speed: 800,
+			loop: true,
 
 			navigation: {
 				prevEl: '.swiper-button-prev',
