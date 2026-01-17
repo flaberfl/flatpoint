@@ -11,6 +11,10 @@
     text-decoration: underline;
   }
 
+  b {
+    font-weight: 700;
+  }
+
   @media (max-width: toEm(1100)) {
     text-align: left;
   }
