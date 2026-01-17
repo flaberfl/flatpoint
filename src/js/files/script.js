@@ -157,151 +157,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Tutorial - https://codyhouse.co/tutorials/how-stacking-cards
-  (function () {
-    var StackCards = function (element) {
-      this.element = element;
-      this.items = this.element.getElementsByClassName('js-stack-cards__item');
-      this.scrollingFn = false;
-      this.scrolling = false;
-      this.headerOffset = 180;
-
-      initStackCardsEffect(this);
-      // initStackCardsResize(this); // <-- УБРАТЬ ЭТУ СТРОКУ
-    };
-
-    function initStackCardsEffect(element) {
-      setStackCards(element);
-      var observer = new IntersectionObserver(stackCardsCallback.bind(element), {
-        threshold: [0, 1]
-      });
-      observer.observe(element.element);
-    };
-
-    // function initStackCardsResize(element) { ... } // <-- УБРАТЬ ЭТУ ФУНКЦИЮ
-
-    function stackCardsCallback(entries) {
-      if (entries[0].isIntersecting) {
-        if (this.scrollingFn) return;
-        stackCardsInitEvent(this);
-      } else {
-        if (!this.scrollingFn) return;
-        window.removeEventListener('scroll', this.scrollingFn);
-        this.scrollingFn = false;
-      }
-    };
-
-    function stackCardsInitEvent(element) {
-      element.scrollingFn = stackCardsScrolling.bind(element);
-      window.addEventListener('scroll', element.scrollingFn);
-    };
-
-    function stackCardsScrolling() {
-      if (this.scrolling) return;
-      this.scrolling = true;
-      window.requestAnimationFrame(animateStackCards.bind(this));
-    };
-
-    function setStackCards(element) {
-      element.marginY = getComputedStyle(element.element).getPropertyValue('--stack-cards-gap');
-      getIntegerFromProperty(element);
-      element.elementHeight = element.element.offsetHeight;
-      var cardStyle = getComputedStyle(element.items[0]);
-      element.cardTop = Math.floor(parseFloat(cardStyle.getPropertyValue('top')));
-      element.cardHeight = Math.floor(parseFloat(cardStyle.getPropertyValue('height')));
-      element.windowHeight = window.innerHeight;
-
-      if (isNaN(element.marginY)) {
-        element.element.style.paddingBottom = '0px';
-      } else {
-        element.element.style.paddingBottom = (element.marginY * (element.items.length - 1)) + 'px';
-      }
-
-      for (var i = 0; i < element.items.length; i++) {
-        if (isNaN(element.marginY)) {
-          element.items[i].style.transform = 'none;';
-        } else {
-          element.items[i].style.transform = 'translateY(' + element.marginY * i + 'px)';
-        }
-      }
-    };
-
-    function getIntegerFromProperty(element) {
-      var node = document.createElement('div');
-      node.setAttribute('style', 'opacity:0; visbility: hidden;position: absolute; height:' + element.marginY);
-      element.element.appendChild(node);
-      element.marginY = parseInt(getComputedStyle(node).getPropertyValue('height'));
-      element.element.removeChild(node);
-    };
-
-    function animateStackCards() {
-      if (isNaN(this.marginY)) {
-        this.scrolling = false;
-        return;
-      }
-
-      var top = this.element.getBoundingClientRect().top;
-
-      // Изменения
-      var adjustedTop = top - this.headerOffset;
-
-      // Условие окончания анимации (может потребоваться адаптация)
-      if (top + this.elementHeight < 0) {
-        this.scrolling = false;
-        return;
-      }
-      if (top > this.windowHeight) {
-        this.scrolling = false;
-        return;
-      }
-      // Изменения //
-
-      if (this.cardTop - top + this.element.windowHeight - this.elementHeight - this.cardHeight + this.marginY + this.marginY * this.items.length > 0) {
-        this.scrolling = false;
-        return;
-      }
-
-      for (var i = 0; i < this.items.length; i++) {
-      // Добавили отклонение высоты шапки
-        var scrolling = this.cardTop - adjustedTop - i * (this.cardHeight + this.marginY);
-        // var scrolling = this.cardTop - top - i * (this.cardHeight + this.marginY);
-        if (scrolling > 0) {
-          var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.08) / this.cardHeight;
-          // this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
-          this.items[i].style.transform = 'translateY';
-        } else {
-          this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
-        }
-      }
-
-      this.scrolling = false;
-    };
-
-    var stackCards = document.getElementsByClassName('js-stack-cards'),
-      intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype),
-      reducedMotion = false; // Util.osHasReducedMotion(); // <-- ЗАМЕНЯЕМ НА false, ТАК КАК UTIL УДАЛЕН
-
-    if (stackCards.length > 0 && intersectionObserverSupported && !reducedMotion) {
-      var stackCardsArray = [];
-      for (var i = 0; i < stackCards.length; i++) {
-        (function (i) {
-          stackCardsArray.push(new StackCards(stackCards[i]));
-        })(i);
-      }
-
-      // УДАЛЯЕМ КОД С РЕЗАЙЗОМ
-    }
-  }());
-
   // (function () {
   //   var StackCards = function (element) {
   //     this.element = element;
   //     this.items = this.element.getElementsByClassName('js-stack-cards__item');
   //     this.scrollingFn = false;
   //     this.scrolling = false;
-  //     // --- УКАЗЫВАЕМ ВЫСОТУ ШАПКИ ---
-  //     this.headerOffset = 280; // Замените на нужное значение
-  //     // --- КОНЕЦ УКАЗАНИЯ ВЫСОТЫ ШАПКИ ---
+  //     this.headerOffset = 180;
+
   //     initStackCardsEffect(this);
+  //     // initStackCardsResize(this); // <-- УБРАТЬ ЭТУ СТРОКУ
   //   };
 
   //   function initStackCardsEffect(element) {
@@ -311,6 +176,8 @@ document.addEventListener('DOMContentLoaded', function () {
   //     });
   //     observer.observe(element.element);
   //   };
+
+  //   // function initStackCardsResize(element) { ... } // <-- УБРАТЬ ЭТУ ФУНКЦИЮ
 
   //   function stackCardsCallback(entries) {
   //     if (entries[0].isIntersecting) {
@@ -360,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //   function getIntegerFromProperty(element) {
   //     var node = document.createElement('div');
-  //     node.setAttribute('style', 'opacity:0; visibility: hidden; position: absolute; height:' + element.marginY); // исправил опечатку в "visibility"
+  //     node.setAttribute('style', 'opacity:0; visbility: hidden;position: absolute; height:' + element.marginY);
   //     element.element.appendChild(node);
   //     element.marginY = parseInt(getComputedStyle(node).getPropertyValue('height'));
   //     element.element.removeChild(node);
@@ -374,62 +241,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //     var top = this.element.getBoundingClientRect().top;
 
-  //     // --- ВВОДИМ СМЕЩЕНИЕ ШАПКИ ---
+  //     // Изменения
   //     var adjustedTop = top - this.headerOffset;
-  //     // --- КОНЕЦ СМЕЩЕНИЯ ---
 
-  //     // --- ИСПРАВЛЕННЫЕ УСЛОВИЯ ОКОНЧАНИЯ АНИМАЦИИ ---
-  //     // Условие: элемент ушёл вниз за пределы вьюпорта
+  //     // Условие окончания анимации (может потребоваться адаптация)
+  //     if (top + this.elementHeight < 0) {
+  //       this.scrolling = false;
+  //       return;
+  //     }
   //     if (top > this.windowHeight) {
   //       this.scrolling = false;
   //       return;
   //     }
+  //     // Изменения //
 
-  //     // Условие: элемент ушёл вверх за пределы вьюпорта (нижний край элемента < 0)
-  //     // Но теперь оно должно учитывать, что анимация "сдвинута" вниз
-  //     // Проверим, ушёл ли *нижний* край контейнера за верх экрана.
-  //     // Bottom of element = top + elementHeight
-  //     // Если (bottom of element) < 0, то элемент ушёл вверх.
-  //     // top + this.elementHeight < 0
-  //     if ((top + this.elementHeight) < 0) {
+  //     if (this.cardTop - top + this.element.windowHeight - this.elementHeight - this.cardHeight + this.marginY + this.marginY * this.items.length > 0) {
   //       this.scrolling = false;
   //       return;
   //     }
-  //     // --- КОНЕЦ ИСПРАВЛЕНИЙ ---
 
-  //     // --- ИСПРАВЛЕНОЕ УСЛОВИЕ ОКОНЧАНИЯ АНИМАЦИИ (вместо оригинального) ---
-  //     // Рассчитываем общую высоту "стопки" карточек
-  //     var totalCardsHeight = this.cardHeight * this.items.length + this.marginY * (this.items.length - 1);
-  //     // Условие: верх "стопки" (adjustedTop + this.cardTop) + высота стопки < 0
-  //     // Это означает, что "стопка" полностью ушла за верх экрана
-  //     // (adjustedTop + this.cardTop + totalCardsHeight) < 0
-  //     // Перепишем как:
-  //     if ((this.cardTop + totalCardsHeight + adjustedTop) < 0) {
-  //       this.scrolling = false;
-  //       return;
-  //     }
-  //     // --- КОНЕЦ ИСПРАВЛЕНИЯ ---
-
-  //     // --- ОСНОВНОЙ ЦИКЛ АНИМАЦИИ ---
   //     for (var i = 0; i < this.items.length; i++) {
-  //       // --- ИСПОЛЬЗУЕМ adjustedTop ---
+  //       // Добавили отклонение высоты шапки
   //       var scrolling = this.cardTop - adjustedTop - i * (this.cardHeight + this.marginY);
-
+  //       // var scrolling = this.cardTop - top - i * (this.cardHeight + this.marginY);
   //       if (scrolling > 0) {
   //         var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.08) / this.cardHeight;
-  //         this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
+  //         // this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
+  //         this.items[i].style.transform = 'translateY';
   //       } else {
   //         this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
   //       }
   //     }
-  //     // --- КОНЕЦ ЦИКЛА ---
 
   //     this.scrolling = false;
   //   };
 
   //   var stackCards = document.getElementsByClassName('js-stack-cards'),
   //     intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype),
-  //     reducedMotion = false; // Предполагаем, что Util.osHasReducedMotion не нужен
+  //     reducedMotion = false; // Util.osHasReducedMotion(); // <-- ЗАМЕНЯЕМ НА false, ТАК КАК UTIL УДАЛЕН
 
   //   if (stackCards.length > 0 && intersectionObserverSupported && !reducedMotion) {
   //     var stackCardsArray = [];
@@ -438,7 +287,153 @@ document.addEventListener('DOMContentLoaded', function () {
   //         stackCardsArray.push(new StackCards(stackCards[i]));
   //       })(i);
   //     }
+
+  //     // УДАЛЯЕМ КОД С РЕЗАЙЗОМ
   //   }
   // }());
 
+  (function () {
+    var StackCards = function (element) {
+      this.element = element;
+      this.items = this.element.getElementsByClassName('js-stack-cards__item');
+
+      // --- Проверяем, нужна ли анимация scale для этого экземпляра ---
+      // Ищем атрибут data-animation="scale" на родительском элементе
+      // Можете использовать другой атрибут или способ определения, если хотите
+      this.useScale = element.hasAttribute('data-animation') && element.getAttribute('data-animation') === 'scale';
+      // --- Конец проверки ---
+
+      this.scrollingFn = false;
+      this.scrolling = false;
+      this.headerOffset = 180; // Укажите высоту шапки
+
+      initStackCardsEffect(this);
+    };
+
+    function initStackCardsEffect(element) {
+      setStackCards(element);
+      var observer = new IntersectionObserver(stackCardsCallback.bind(element), {
+        threshold: [0, 1]
+      });
+      observer.observe(element.element);
+    };
+
+    function stackCardsCallback(entries) {
+      if (entries[0].isIntersecting) {
+        if (this.scrollingFn) return;
+        stackCardsInitEvent(this);
+      } else {
+        if (!this.scrollingFn) return;
+        window.removeEventListener('scroll', this.scrollingFn);
+        this.scrollingFn = false;
+      }
+    };
+
+    function stackCardsInitEvent(element) {
+      element.scrollingFn = stackCardsScrolling.bind(element);
+      window.addEventListener('scroll', element.scrollingFn);
+    };
+
+    function stackCardsScrolling() {
+      if (this.scrolling) return;
+      this.scrolling = true;
+      window.requestAnimationFrame(animateStackCards.bind(this));
+    };
+
+    function setStackCards(element) {
+      element.marginY = getComputedStyle(element.element).getPropertyValue('--stack-cards-gap');
+      getIntegerFromProperty(element);
+      element.elementHeight = element.element.offsetHeight;
+      var cardStyle = getComputedStyle(element.items[0]);
+      element.cardTop = Math.floor(parseFloat(cardStyle.getPropertyValue('top')));
+      element.cardHeight = Math.floor(parseFloat(cardStyle.getPropertyValue('height')));
+      element.windowHeight = window.innerHeight;
+
+      if (isNaN(element.marginY)) {
+        element.element.style.paddingBottom = '0px';
+      } else {
+        element.element.style.paddingBottom = (element.marginY * (element.items.length - 1)) + 'px';
+      }
+
+      for (var i = 0; i < element.items.length; i++) {
+        if (isNaN(element.marginY)) {
+          element.items[i].style.transform = 'none;';
+        } else {
+          element.items[i].style.transform = 'translateY(' + element.marginY * i + 'px)';
+        }
+      }
+    };
+
+    function getIntegerFromProperty(element) {
+      var node = document.createElement('div');
+      node.setAttribute('style', 'opacity:0; visibility: hidden; position: absolute; height:' + element.marginY); // исправил опечатку
+      element.element.appendChild(node);
+      element.marginY = parseInt(getComputedStyle(node).getPropertyValue('height'));
+      element.element.removeChild(node);
+    };
+
+    function animateStackCards() {
+      if (isNaN(this.marginY)) {
+        this.scrolling = false;
+        return;
+      }
+
+      var top = this.element.getBoundingClientRect().top;
+      var adjustedTop = top - this.headerOffset;
+
+      // Условия окончания анимации
+      if (top > this.windowHeight) {
+        this.scrolling = false;
+        return;
+      }
+      if ((top + this.elementHeight) < 0) {
+        this.scrolling = false;
+        return;
+      }
+
+      // Исправленное условие окончания анимации
+      var totalCardsHeight = this.cardHeight * this.items.length + this.marginY * (this.items.length - 1);
+      if ((this.cardTop + totalCardsHeight + adjustedTop) < 0) {
+        this.scrolling = false;
+        return;
+      }
+
+      for (var i = 0; i < this.items.length; i++) {
+        var scrolling = this.cardTop - adjustedTop - i * (this.cardHeight + this.marginY);
+
+        if (scrolling > 0) {
+          // --- Условие: использовать scale или нет ---
+          if (this.useScale) {
+            // Анимация с масштабированием
+            var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.08) / this.cardHeight;
+            this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
+          } else {
+            // Анимация без масштабирования (только translateY)
+            this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
+          }
+          // --- Конец условия ---
+        } else {
+          // Карточка не "прилипла", просто остается на своем месте
+          this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px)';
+        }
+      }
+
+      this.scrolling = false;
+    };
+
+    // Инициализация всех блоков с классом js-stack-cards
+    var stackCards = document.getElementsByClassName('js-stack-cards'),
+      intersectionObserverSupported = ('IntersectionObserver' in window && 'IntersectionObserverEntry' in window && 'intersectionRatio' in window.IntersectionObserverEntry.prototype),
+      reducedMotion = false; // Предполагаем, что Util.osHasReducedMotion не нужен
+
+    if (stackCards.length > 0 && intersectionObserverSupported && !reducedMotion) {
+      var stackCardsArray = [];
+      for (var i = 0; i < stackCards.length; i++) {
+        (function (i) {
+          // Создаём новый экземпляр StackCards для каждого найденного элемента
+          stackCardsArray.push(new StackCards(stackCards[i]));
+        })(i);
+      }
+    }
+  }());
 });
