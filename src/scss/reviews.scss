@@ -293,21 +293,53 @@
 /* Скрываем Swiper-ы на мобильных */
 @media (max-width: 767px) {
 
-  .reviews__slider1,
-  .reviews__slider2,
-  .reviews__slider3 {
-    display: none;
-  }
+  // .reviews__slider1,
+  // .reviews__slider2,
+  // .reviews__slider3 {
+  //   display: none;
+  // }
 
   /* Показываем мобильный список */
-  .mobile-list {
+  // .mobile-list {
+  //   display: flex;
+  //   gap: 10px;
+  //   overflow-x: auto;
+  //   scrollbar-width: none;
+  // }
+
+  // .mobile-list .swiper-slide {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   gap: 5px;
+  //   padding: 10px;
+  //   background: #fff;
+  //   border-radius: 15px;
+  //   min-height: 124px;
+  //   width: 150px;
+  //   flex-shrink: 0;
+  // }
+
+  // .mobile-list .reviews__photo {
+  //   width: 60px;
+  //   height: 60px;
+  //   border-radius: 50%;
+  // }
+
+  .mobile-list .reviews__text-reviews {
+    text-align: center;
+    margin: 0;
+  }
+
+
+  .reviews__footer {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     scrollbar-width: none;
   }
 
-  .mobile-list .swiper-slide {
+  .reviews__footer .swiper-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -320,15 +352,15 @@
     flex-shrink: 0;
   }
 
-  // .mobile-list .reviews__photo {
-  //   width: 60px;
-  //   height: 60px;
-  //   border-radius: 50%;
-  // }
-
-  .mobile-list .reviews__text-reviews {
+  .reviews__footer .reviews__text-reviews {
     text-align: center;
     margin: 0;
+  }
+
+  .reviews__wrapper1,
+  .reviews__wrapper2,
+  .reviews__wrapper3 {
+    gap: toRem(10);
   }
 }
 
