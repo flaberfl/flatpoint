@@ -78,7 +78,8 @@
   position: -webkit-sticky;
   /* Для старых браузеров */
   position: sticky;
-  top: var(--space-sm);
+  // top: var(--space-sm);
+  top: 80px;
   /* Или конкретное значение, напр. 1.25em */
   // height: 0;
   // padding-bottom: 50%;
