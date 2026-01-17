@@ -1,0 +1,17 @@
+.page-doc {
+  @include adaptiveValue("padding-top", 140, 80);
+}
+
+.page-doc__title {
+  @include adaptiveValue("margin-bottom", 60, 30);
+}
+
+.page-doc__content {
+  a {
+    text-decoration: underline;
+  }
+
+  @media (max-width: toEm(1100)) {
+    text-align: left;
+  }
+}
