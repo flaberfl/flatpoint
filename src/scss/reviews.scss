@@ -347,6 +347,11 @@
     gap: 10px;
     overflow-x: auto;
     scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
   }
 
   .reviews__footer .swiper-slide {

@@ -22,6 +22,11 @@
     overflow-x: auto;
     scrollbar-width: none;
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+
     @include adaptiveValue("gap", 20, 10);
   }
 
@@ -142,8 +147,7 @@
 .banner-callback {
 
   /* .banner-callback__container */
-  &__container {
-  }
+  &__container {}
 
   &__content {
     padding: toRem(30) toRem(18) toRem(23);
@@ -151,9 +155,9 @@
     border-radius: toRem(10);
     background-color: #fff;
 
-    @media (max-width:$mobileSmall){
-       margin-right: -15px;
-       margin-left: -15px; 
+    @media (max-width:$mobileSmall) {
+      margin-right: -15px;
+      margin-left: -15px;
     }
   }
 
@@ -167,8 +171,8 @@
 
     @include adaptiveValue("margin-bottom", 32, 23);
 
-    @media (max-width:$mobile){
-       grid-template-columns: auto; 
+    @media (max-width:$mobile) {
+      grid-template-columns: auto;
     }
   }
 
@@ -179,9 +183,9 @@
 
     @include adaptiveValue("gap", 23, 15);
 
-    @media (max-width: toEm(360)){
-       flex-direction: column; 
-       align-items: flex-start;
+    @media (max-width: toEm(360)) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
