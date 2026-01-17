@@ -66,25 +66,26 @@
 //     transition: transform 0.2s ease-out, opacity 0.2s ease-out, z-index 0.1s step-end;
 // }
 
+@media (min-width:$tablet) {
 
+  .stack-cards {
+    --stack-cards-gap: var(--space-sm);
+    /* Используется JS */
+  }
 
-.stack-cards {
-  --stack-cards-gap: var(--space-sm);
-  /* Используется JS */
-}
-
-.stack-cards__item {
-  position: relative;
-  position: -webkit-sticky;
-  /* Для старых браузеров */
-  position: sticky;
-  // top: var(--space-sm);
-  top: 80px;
-  /* Или конкретное значение, напр. 1.25em */
-  // height: 0;
-  // padding-bottom: 50%;
-  /* Пример пропорции */
-  transform-origin: center top;
-  /* Для эффекта скейла */
-  overflow: hidden;
+  .stack-cards__item {
+    position: relative;
+    position: -webkit-sticky;
+    /* Для старых браузеров */
+    position: sticky;
+    // top: var(--space-sm);
+    top: 80px;
+    /* Или конкретное значение, напр. 1.25em */
+    // height: 0;
+    // padding-bottom: 50%;
+    /* Пример пропорции */
+    transform-origin: center top;
+    /* Для эффекта скейла */
+    overflow: hidden;
+  }
 }

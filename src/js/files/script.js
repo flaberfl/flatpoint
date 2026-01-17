@@ -293,6 +293,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // }());
 
   (function () {
+
+    if (window.innerWidth <= 992) {
+      // Если ширина 992px или меньше, ничего не делаем
+      return;
+    }
+
     var StackCards = function (element) {
       this.element = element;
       this.items = this.element.getElementsByClassName('js-stack-cards__item');
@@ -405,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () {
           // --- Условие: использовать scale или нет ---
           if (this.useScale) {
             // Анимация с масштабированием
-            var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.08) / this.cardHeight;
+            var scaling = i == this.items.length - 1 ? 1 : (this.cardHeight - scrolling * 0.15) / this.cardHeight;
             this.items[i].style.transform = 'translateY(' + this.marginY * i + 'px) scale(' + scaling + ')';
           } else {
             // Анимация без масштабирования (только translateY)
