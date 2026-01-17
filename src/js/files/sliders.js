@@ -24,103 +24,10 @@ function initSliders() {
 	//Список слайдеров
 	//Проверяем, есть ли слайдер на странице
 
+
+
+
 	// if (document.querySelector('.activities__slider')) { //Указываем класс нужного слайдера
-	// 	//Создаем слайдер
-	// 	new Swiper('.activities__slider', { //Указываем класс нужного слайдера
-	// 		//Подключаем модули слайдера
-	// 		//для конкретного случая
-	// 		observer: true,
-	// 		observeParents: true,
-	// 		slidesPerView: 4,
-	// 		spaceBetween: 0,
-	// 		// lazy: true,
-
-	// 		freeMode: true,
-	// 		allowTouchMove: true,
-	// 		mousewheel: {
-	// 			forceToAxis: true,
-	// 			releaseOnEdges: true,
-	// 		},
-	// 		keyboard: {
-	// 			enabled: true,
-	// 		},
-
-
-	// 		// slidesPerView: 1, // Показываем 3 слайда
-	// 		// slidesPerGroup: 1,
-
-	// 		// loopAdditionalSlides: 3,
-	// 		autoHeight: true,
-	// 		speed: 800,
-
-	// 		// // Брейкпоинты
-	// 		breakpoints: {
-	// 			0: {
-	// 				slidesPerView: 1,
-
-	// 			},
-	// 			320: {
-	// 				slidesPerView: 1.5,
-
-	// 			},
-	// 			480: {
-	// 				slidesPerView: 2,
-
-	// 			},
-	// 			600: {
-	// 				slidesPerView: 2.5,
-
-	// 			},
-
-	// 			768: {
-
-	// 				slidesPerView: 3,
-	// 			},
-	// 			992: {
-	// 				slidesPerView: 3.5,
-	// 			},
-
-	// 			1366: {
-	// 				slidesPerView: 4,
-	// 			},
-
-	// 			1920: {
-	// 				slidesPerView: 4,
-	// 			},
-	// 		},
-
-
-	// 		// События
-	// 		on: {
-
-	// 			reachBeginning: function () {
-	// 				// Когда достигли начала, разрешаем скролл страницы
-	// 				document.body.style.overflow = '';
-	// 			},
-	// 			reachEnd: function () {
-	// 				// Когда достигли конца, разрешаем скролл страницы
-	// 				document.body.style.overflow = '';
-	// 			},
-	// 			sliderMove: function () {
-	// 				// Во время движения слайдера блокируем скролл страницы
-	// 				document.body.style.overflow = 'hidden';
-
-	// 				// Через короткое время разблокируем, чтобы не мешать
-	// 				setTimeout(() => {
-	// 					if (!this.isBeginning && !this.isEnd) {
-	// 						document.body.style.overflow = 'hidden';
-	// 					} else {
-	// 						document.body.style.overflow = '';
-	// 					}
-	// 				}, 100);
-	// 			}
-
-	// 		}
-	// 	});
-	// }
-
-
-	// if (document.querySelector('.activities__slider')) { // С Анимацией Указываем класс нужного слайдера
 	// 	//Создаем слайдер
 	// 	const swiper = new Swiper('.activities__slider', { //Указываем класс нужного слайдера
 	// 		//Подключаем модули слайдера
@@ -152,61 +59,51 @@ function initSliders() {
 	// 		breakpoints: {
 	// 			0: {
 	// 				slidesPerView: 1,
-
 	// 			},
 	// 			320: {
 	// 				slidesPerView: 1.5,
-
 	// 			},
 	// 			480: {
 	// 				slidesPerView: 2,
-
 	// 			},
 	// 			600: {
 	// 				slidesPerView: 2.5,
-
 	// 			},
-
 	// 			768: {
-
 	// 				slidesPerView: 3,
 	// 			},
 	// 			992: {
 	// 				slidesPerView: 3.5,
 	// 			},
-
 	// 			1366: {
 	// 				slidesPerView: 4,
 	// 			},
-
 	// 			1920: {
 	// 				slidesPerView: 4,
 	// 			},
 	// 		},
 
-
 	// 		// События
 	// 		on: {
 	// 			reachBeginning: function () {
+
 	// 				// Когда достигли начала, разрешаем скролл страницы
-	// 				document.body.style.overflow = '';
+	// 				document.body.style.removeProperty('overflow');
 	// 			},
 	// 			reachEnd: function () {
 	// 				// Когда достигли конца, разрешаем скролл страницы
-	// 				document.body.style.overflow = '';
+	// 				document.body.style.removeProperty('overflow');
 	// 			},
-	// 			sliderMove: function () {
-	// 				// Во время движения слайдера блокируем скролл страницы
+	// 			slideChangeTransitionStart: function () {
+	// 				// Блокируем скролл страницы при начале перехода слайдера
 	// 				document.body.style.overflow = 'hidden';
-
-	// 				// Через короткое время разблокируем, чтобы не мешать
-	// 				setTimeout(() => {
-	// 					if (!this.isBeginning && !this.isEnd) {
-	// 						document.body.style.overflow = 'hidden';
-	// 					} else {
-	// 						document.body.style.overflow = '';
-	// 					}
-	// 				}, 100);
+	// 			},
+	// 			slideChangeTransitionEnd: function () {
+	// 				// Проверяем, достигли ли мы начала или конца
+	// 				if (this.isBeginning || this.isEnd) {
+	// 					// Если достигли начала или конца, разрешаем скролл страницы
+	// 					document.body.style.removeProperty('overflow');
+	// 				}
 	// 			}
 	// 		}
 	// 	});
@@ -214,6 +111,7 @@ function initSliders() {
 	// 	// Добавляем обработчик скролла для элемента слайдера
 	// 	const sliderElement = document.querySelector('.activities__slider');
 	// 	let lastScrollTime = 0;
+	// 	let isSliderScrolling = false;
 
 	// 	if (sliderElement) {
 	// 		sliderElement.addEventListener('wheel', function (e) {
@@ -227,103 +125,131 @@ function initSliders() {
 
 	// 			if ((e.deltaY > 0 && isAtEnd) || (e.deltaY < 0 && isAtBeginning)) {
 	// 				// Если достигли конца/начала, позволяем скроллить страницу
-	// 				// Но не предотвращаем событие
+	// 				// Но сначала убедимся, что мы не блокируем скролл
+	// 				document.body.style.removeProperty('overflow');
+	// 				isSliderScrolling = false;
 	// 				return;
 	// 			} else {
 	// 				// Если можно скроллить слайдер, предотвращаем скролл страницы
 	// 				e.preventDefault();
+	// 				e.stopPropagation();
+
+	// 				// Блокируем скролл страницы
+	// 				document.body.style.overflow = 'hidden';
+	// 				isSliderScrolling = true;
+
 	// 				if (e.deltaY > 0) {
 	// 					swiper.slideNext();
 	// 				} else {
 	// 					swiper.slidePrev();
 	// 				}
+
+	// 				// Устанавливаем таймер для разблокировки скролла страницы
+	// 				setTimeout(() => {
+	// 					if (isSliderScrolling && (swiper.isBeginning || swiper.isEnd)) {
+	// 						document.body.style.removeProperty('overflow');
+	// 						isSliderScrolling = false;
+	// 					}
+	// 				}, 300);
 	// 			}
 	// 		});
 	// 	}
 	// }
 
-
 	if (document.querySelector('.activities__slider')) { //Указываем класс нужного слайдера
-		//Создаем слайдер
-		const swiper = new Swiper('.activities__slider', { //Указываем класс нужного слайдера
-			//Подключаем модули слайдера
-			//для конкретного случая
-			observer: true,
-			observeParents: true,
-			slidesPerView: 4,
-			spaceBetween: 0,
-			// lazy: true,
+	// Проверяем ширину экрана
+	const isMobile = window.innerWidth < 992;
 
-			freeMode: false, // Изменили на false для корректной работы isEnd/isBeginning
-			allowTouchMove: true,
-			mousewheel: {
-				forceToAxis: true,
-				releaseOnEdges: true,
+	// Определяем параметры Swiper в зависимости от ширины
+	const swiperParams = {
+		//Подключаем модули слайдера
+		//для конкретного случая
+		observer: true,
+		observeParents: true,
+		slidesPerView: 4,
+		spaceBetween: 0,
+		// lazy: true,
+
+		freeMode: false, // Изменили на false для корректной работы isEnd/isBeginning
+		allowTouchMove: true,
+		// --- УСЛОВНОЕ ВКЛЮЧЕНИЕ MOUSEWHEEL ---
+		mousewheel: isMobile ? false : { // <-- Отключаем mousewheel на мобильных
+			forceToAxis: true,
+			releaseOnEdges: true,
+		},
+		// --- КОНЕЦ УСЛОВИЯ ---
+		keyboard: {
+			enabled: true,
+		},
+
+		// slidesPerView: 1, // Показываем 3 слайда
+		// slidesPerGroup: 1,
+
+		// loopAdditionalSlides: 3,
+		autoHeight: true,
+		speed: 800,
+
+		// // Брейкпоинты
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
 			},
-			keyboard: {
-				enabled: true,
+			320: {
+				slidesPerView: 1.5,
 			},
-
-			// slidesPerView: 1, // Показываем 3 слайда
-			// slidesPerGroup: 1,
-
-			// loopAdditionalSlides: 3,
-			autoHeight: true,
-			speed: 800,
-
-			// // Брейкпоинты
-			breakpoints: {
-				0: {
-					slidesPerView: 1,
-				},
-				320: {
-					slidesPerView: 1.5,
-				},
-				480: {
-					slidesPerView: 2,
-				},
-				600: {
-					slidesPerView: 2.5,
-				},
-				768: {
-					slidesPerView: 3,
-				},
-				992: {
-					slidesPerView: 3.5,
-				},
-				1366: {
-					slidesPerView: 4,
-				},
-				1920: {
-					slidesPerView: 4,
-				},
+			480: {
+				slidesPerView: 2,
 			},
+			600: {
+				slidesPerView: 2.5,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			992: {
+				slidesPerView: 3.5,
+			},
+			1366: {
+				slidesPerView: 4,
+			},
+			1920: {
+				slidesPerView: 4,
+			},
+		},
 
-			// События
-			on: {
-				reachBeginning: function () {
-					// Когда достигли начала, разрешаем скролл страницы
-					document.body.style.removeProperty('overflow');
-				},
-				reachEnd: function () {
-					// Когда достигли конца, разрешаем скролл страницы
-					document.body.style.removeProperty('overflow');
-				},
-				slideChangeTransitionStart: function () {
-					// Блокируем скролл страницы при начале перехода слайдера
-					document.body.style.overflow = 'hidden';
-				},
-				slideChangeTransitionEnd: function () {
-					// Проверяем, достигли ли мы начала или конца
-					if (this.isBeginning || this.isEnd) {
-						// Если достигли начала или конца, разрешаем скролл страницы
-						document.body.style.removeProperty('overflow');
-					}
-				}
+		// --- УСЛОВНАЯ ЛОГИКА СОБЫТИЙ (блокировка скролла) ---
+		on: {}
+	};
+
+	// Добавляем события, влияющие на скролл страницы, ТОЛЬКО если это НЕ мобильная версия
+	if (!isMobile) {
+		swiperParams.on.reachBeginning = function () {
+			// Когда достигли начала, разрешаем скролл страницы
+			document.body.style.removeProperty('overflow');
+		};
+		swiperParams.on.reachEnd = function () {
+			// Когда достигли конца, разрешаем скролл страницы
+			document.body.style.removeProperty('overflow');
+		};
+		swiperParams.on.slideChangeTransitionStart = function () {
+			// Блокируем скролл страницы при начале перехода слайдера
+			document.body.style.overflow = 'hidden';
+		};
+		swiperParams.on.slideChangeTransitionEnd = function () {
+			// Проверяем, достигли ли мы начала или конца
+			if (this.isBeginning || this.isEnd) {
+				// Если достигли начала или конца, разрешаем скролл страницы
+				document.body.style.removeProperty('overflow');
 			}
-		});
+		};
+	}
+	// --- КОНЕЦ УСЛОВНОЙ ЛОГИКИ ---
 
-		// Добавляем обработчик скролла для элемента слайдера
+	//Создаем слайдер
+	const swiper = new Swiper('.activities__slider', swiperParams);
+
+	// --- УСЛОВНОЕ ДОБАВЛЕНИЕ ОБРАБОТЧИКА WHEEL ---
+	if (!isMobile) { // Только на desktop
 		const sliderElement = document.querySelector('.activities__slider');
 		let lastScrollTime = 0;
 		let isSliderScrolling = false;
@@ -370,6 +296,8 @@ function initSliders() {
 			});
 		}
 	}
+	// --- КОНЕЦ УСЛОВНОГО ОБРАБОТЧИКА ---
+}
 
 	if (document.querySelector('.reviews__slider')) { //Указываем класс нужного слайдера
 		//Создаем слайдер
