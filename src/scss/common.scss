@@ -65,3 +65,25 @@
 // .values__item--active {
 //     transition: transform 0.2s ease-out, opacity 0.2s ease-out, z-index 0.1s step-end;
 // }
+
+
+
+.stack-cards {
+  --stack-cards-gap: var(--space-sm);
+  /* Используется JS */
+}
+
+.stack-cards__item {
+  position: relative;
+  position: -webkit-sticky;
+  /* Для старых браузеров */
+  position: sticky;
+  top: var(--space-sm);
+  /* Или конкретное значение, напр. 1.25em */
+  // height: 0;
+  // padding-bottom: 50%;
+  /* Пример пропорции */
+  transform-origin: center top;
+  /* Для эффекта скейла */
+  overflow: hidden;
+}

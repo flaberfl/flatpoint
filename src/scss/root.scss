@@ -8,7 +8,7 @@
 	--second-color: #3e5128;
 	--third-color: #981214;
 	--other-color: #e7d2b3;
-	
+
 
 	//* Виды шрифта
 
@@ -16,4 +16,13 @@
 	--font-family-nr: "MartianGroteskNr", sans-serif;
 	--second-family: "Manrope", sans-serif;
 	--third-family: "Marker Felt", sans-serif;
+
+
+
+	--space-unit: 1em;
+	--space-sm: calc(1.75 * var(--space-unit));
+	/* Используется в --stack-cards-gap */
+	/* Добавим переменную напрямую, если не хотим зависеть от --space-sm */
+	--stack-cards-gap: var(--space-sm);
+	/* или конкретное значение, напр. 0.75em */
 }
