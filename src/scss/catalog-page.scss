@@ -8,7 +8,7 @@
   background-size: cover;
 
   padding-bottom: toRem(40);
-  @include adaptiveValue("padding-top", 245, 80);
+  @include adaptiveValue("padding-top", 380, 200);
 
   &::before {
     content: '';
@@ -28,11 +28,11 @@
   /* .catalog__title */
   &__title {
     max-width: toRem(680);
-    margin: 0 auto;
+    // margin: 0 auto;
 
     line-height: 107%;
     letter-spacing: -0.03em;
-    text-align: center;
+    // text-align: center;
     color: #fff;
     @include adaptiveValue("font-size", 60, 30);
 
@@ -42,11 +42,11 @@
   /* .catalog__subtitle */
   &__subtitle {
     max-width: toRem(688);
-    margin: 0 auto;
+    // margin: 0 auto;
 
     font-family: var(--second-family);
     line-height: 131%;
-    text-align: center;
+    // text-align: center;
     color: #fff;
     @include adaptiveValue("font-size", 20, 14);
 
