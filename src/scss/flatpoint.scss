@@ -3,14 +3,13 @@
   background: url('@img/backg.png') center 0;
   // background-size: cover;
 
-  // border: 1px solid red;
 
   @include adaptiveValue("margin-top", -300, -610);
   @include adaptiveValue("padding-top", 536, 444);
 
   @media (max-width:$mobile) {
-    @include adaptiveValue("margin-top", -1500, -610);
-    @include adaptiveValue("padding-top", 1536, 444);
+  @include adaptiveValue("margin-top", -1024, -350);
+    @include adaptiveValue("padding-top", 1240, 420);
   }
 
   &__line {

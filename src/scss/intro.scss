@@ -1,15 +1,25 @@
 .intro {
   position: relative;
+  background-image: url('@img/intro.jpg');
 
-  margin-bottom: toRem(260);
+    background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
+  
   @media (min-width:$mobile) {
+    margin-bottom: toRem(260);
     @include adaptiveValue("height", 888, 300);
   }
 
   @media (max-width:$mobile) {
-    display: flex;
-    flex-direction: column-reverse;
+    padding-bottom: toRem(55);
+    padding-top: toRem(55);
+    // display: flex;
+    // flex-direction: column-reverse;
+
+    @include adaptiveValue("padding-top", 55, 130);
+    @include adaptiveValue("padding-bottom", 55, 120);
   }
 
   &::before {
@@ -19,33 +29,34 @@
     width: 100%;
     height: 100%;
     opacity: 0.7;
+    top: 0;
     pointer-events: none;
-
+    object-fit: cover;
     @media (max-width:$mobile) {
-      display: none;
+      // display: none;
     }
   }
 
 
-  &__background {
-    @media (max-width:$mobile) {
-      position: relative;
+  // &__background {
+  //   @media (max-width:$mobile) {
+  //     position: relative;
 
-      border-radius: toRem(20);
-      overflow: hidden;
+  //     border-radius: toRem(20);
+  //     overflow: hidden;
 
-      &::before {
-        content: '';
-        position: absolute;
-        background: linear-gradient(180.00deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100%);
-        width: 100%;
-        height: 100%;
-        opacity: 0.7;
-        pointer-events: none;
-        z-index: 1;
-      }
-    }
-  }
+  //     &::before {
+  //       content: '';
+  //       position: absolute;
+  //       background: linear-gradient(180.00deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 100%);
+  //       width: 100%;
+  //       height: 100%;
+  //       opacity: 0.7;
+  //       pointer-events: none;
+  //       z-index: 1;
+  //     }
+  //   }
+  // }
 
   &__img {
     position: absolute;
@@ -56,8 +67,8 @@
     z-index: -1;
 
     @media (max-width:$mobile) {
-      position: static;
-      max-width: 100%;
+      // position: static;
+      // max-width: 100%;
     }
   }
 
@@ -66,8 +77,8 @@
     @include adaptiveValue("padding-top", 520, 60);
 
     @media (max-width:$mobile) {
-      padding-top: toRem(80);
-      margin-bottom: 30px;
+      // padding-top: toRem(80);
+      // margin-bottom: 30px;
     }
   }
 
@@ -80,12 +91,13 @@
     z-index: 100;
 
     @media (max-width:$mobile) {
-      flex-direction: column;
+      // flex-direction: column;
     }
   }
 
   &__content {
-    @media (max-width:$mobile) {}
+  
+
   }
 
   &__title {
@@ -102,7 +114,6 @@
     @include adaptiveValue("margin-bottom", 26, 17);
 
     @media (max-width:$mobile) {
-      color: $titleColor;
       text-align: center;
     }
   }
@@ -120,7 +131,6 @@
 
     @media (max-width:$mobile) {
       text-align: center;
-      color: $mainColor;
     }
   }
 
@@ -179,8 +189,8 @@
         width: 100%;
         height: 47px;
         max-width: toRem(288);
-             left: 50%;
-         transform: translate(-50%,0px); 
+        left: 50%;
+        transform: translate(-50%, 0px);
         // right: toRem(15);
         bottom: toRem(20);
 
@@ -338,6 +348,10 @@
 
   @media (max-width:$mobile) {
     display: block;
+  }
+
+  @media (max-width: toEm(400)){
+     margin-top: 40px; 
   }
 }
 
