@@ -8,7 +8,11 @@
   background-size: cover;
 
   padding-bottom: toRem(40);
-  @include adaptiveValue("padding-top", 380, 200);
+  @include adaptiveValue("padding-top", 380, 250);
+
+  @media (max-width:$mobileSmall) {
+    background-position: 60% center;
+  }
 
   &::before {
     content: '';
