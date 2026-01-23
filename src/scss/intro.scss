@@ -2,11 +2,11 @@
   position: relative;
   background-image: url('@img/intro.jpg');
 
-    background-position: center center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  
+
   @media (min-width:$mobile) {
     margin-bottom: toRem(260);
     @include adaptiveValue("height", 888, 300);
@@ -22,6 +22,11 @@
     @include adaptiveValue("padding-bottom", 55, 120);
   }
 
+  @media (max-width: toEm(600)) {
+    min-height: 100vh;
+  }
+
+
   &::before {
     content: '';
     position: absolute;
@@ -32,6 +37,7 @@
     top: 0;
     pointer-events: none;
     object-fit: cover;
+
     @media (max-width:$mobile) {
       // display: none;
     }
@@ -95,10 +101,7 @@
     }
   }
 
-  &__content {
-  
-
-  }
+  &__content {}
 
   &__title {
     position: relative;
@@ -350,8 +353,8 @@
     display: block;
   }
 
-  @media (max-width: toEm(400)){
-     margin-top: 40px; 
+  @media (max-width: toEm(400)) {
+    margin-top: 40px;
   }
 }
 
